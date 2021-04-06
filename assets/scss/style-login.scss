@@ -1,0 +1,69 @@
+@import "main";
+ 
+#login h1 a,
+.login h1 a {
+    background-image: url('../images/logo-square.jpg');
+    height: 80px;
+    width: 80px;
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    padding-bottom: 0;
+}
+
+body.login {background-color: $light} 
+body.login div#login {}
+body.login div#login h1 {}
+body.login div#login h1 a {}
+body.login div#login form {}
+body.login div#login form p {}
+body.login div#login form p label {}
+body.login div#login form input {}
+body.login div#login form input.button.button-primary {
+    background-color: $primary;
+    border-color: darken($primary, 15%);
+}
+body.login div#login form input.button.button-primary:focus,
+body.login div#login form input.button.button-primary:hover {
+    background-color: darken($primary, 15%);
+}
+body.login div#login form input#user_login {}
+body.login div#login form input#user_pass {}
+body.login div#login form p.forgetmenot {}
+body.login div#login form p.forgetmenot input#rememberme {}
+body.login div#login form p.submit {}
+body.login div#login form p.submit input#wp-submit {}
+body.login div#login p#nav {}
+body.login div#login p#nav a {}
+body.login #backtoblog a:hover, 
+body.login #nav a:hover, 
+body.login h1 a:hover{
+    color: $primary;
+}
+body.login div#login p#backtoblog {}
+body.login div#login p#backtoblog a {}
+body.login #login_error, 
+body.login .message, 
+body.login .success{
+    border-left-color: $primary;
+}
+/*body.login input[type=checkbox]:focus, 
+body.login input[type=color]:focus, 
+body.login input[type=date]:focus, 
+body.login input[type=datetime-local]:focus, 
+body.login input[type=datetime]:focus, 
+body.login input[type=email]:focus, 
+body.login input[type=month]:focus, 
+body.login input[type=number]:focus, 
+body.login input[type=password]:focus, 
+body.login input[type=radio]:focus, 
+body.login input[type=search]:focus, 
+body.login input[type=tel]:focus, 
+body.login input[type=text]:focus, 
+body.login input[type=time]:focus, 
+body.login input[type=url]:focus, 
+body.login input[type=week]:focus, 
+body.login select:focus, 
+body.login textarea:focus{
+    border-color: $primary;
+    box-shadow: 0 0 0 1px $primary;
+}*/

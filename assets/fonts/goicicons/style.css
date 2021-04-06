@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'goic';
+  src:  url('fonts/goic.eot?s3ft4r');
+  src:  url('fonts/goic.eot?s3ft4r#iefix') format('embedded-opentype'),
+    url('fonts/goic.ttf?s3ft4r') format('truetype'),
+    url('fonts/goic.woff?s3ft4r') format('woff'),
+    url('fonts/goic.svg?s3ft4r#goic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="goicicons-"], [class*=" goicicons-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'goic' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.goicicons-time:before {
+  content: "\e902";
+}
+.goicicons-chapters:before {
+  content: "\e903";
+}
+.goicicons-play-square:before {
+  content: "\e904";
+}
+.goicicons-play-circle:before {
+  content: "\e907";
+}
+.goicicons-youtube:before {
+  content: "\e915";
+}
+.goicicons-spotify:before {
+  content: "\e916";
+}
+.goicicons-insta-icon:before {
+  content: "\e910";
+}
+.goicicons-fac-icon:before {
+  content: "\e911";
+}
+.goicicons-linkedin:before {
+  content: "\e912";
+}
+.goicicons-check:before {
+  content: "\e905";
+}
+.goicicons-trash:before {
+  content: "\e906";
+}
+.goicicons-email:before {
+  content: "\e900";
+}
+.goicicons-phone:before {
+  content: "\e901";
+}
+.goicicons-burger:before {
+  content: "\e90c";
+}
+.goicicons-map-marker:before {
+  content: "\e90d";
+}
+.goicicons-calendar:before {
+  content: "\e90e";
+}
+.goicicons-arrowhead-right:before {
+  content: "\e90f";
+}
+.goicicons-search:before {
+  content: "\e913";
+}
+.goicicons-arrow-light:before {
+  content: "\e914";
+}
