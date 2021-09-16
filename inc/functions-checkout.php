@@ -40,14 +40,23 @@ function send_checkout_form() {
     die();
 }
 
-function create_order($order_data = []){
+function create_order($order_data = [], $user_id_custom = false){
     if(empty($order_data)) return false;
 
     $product_data = get_post($order_data['product_id'], 'ARRAY_A');
     $product_meta = get_post_meta($order_data['product_id']);
 
     global $user_id;
-    $post_author = ($user_id) ? $user_id : $order_data['user_id'];
+    if($user_id_custom){
+        $post_author = $user_id_custom;
+    }elseif($order_data['user_id']){
+        $post_author = $order_data['user_id'];
+    }elseif($user_id){
+        $post_author = $user_id;
+    }else{
+        $post_author = false;
+    }
+    // $post_author = ($user_id) ? $user_id : $order_data['user_id'];
 
     $post_title = $order_data['first_name'] . ' ' . $order_data['last_name'] . ' || ' . $product_data['post_title'];
 	$order_id = wp_insert_post([
@@ -62,10 +71,11 @@ function create_order($order_data = []){
     $user_info = get_userdata($post_author);
 
     $order_unique_id = uniqid();
+    $user_email = ($order_data['user_email']) ? $order_data['user_email'] : $user_info->user_email;
     update_field('goicc_order_unique_id', $order_unique_id, $order_id);
     update_field('goicc_order_first_name', $order_data['first_name'], $order_id);
     update_field('goicc_order_last_name', $order_data['last_name'], $order_id);
-    update_field('goicc_order_email', $user_info->user_email, $order_id);
+    update_field('goicc_order_email', $user_email, $order_id);
 
     update_field('goicc_order_status', array_key_first(goicc_get_order_statuses()), $order_id);
     update_field('goicc_payment_status', array_key_first(goicc_get_payment_statuses()), $order_id);
@@ -111,7 +121,7 @@ function create_order($order_data = []){
         }
     }
 
-    do_action('goicc_create_order', $order_id, $user_id, $order_data, $product_data, $product_meta);
+    do_action('goicc_create_order', $order_id, $post_author, $order_data, $product_data, $product_meta);
 
     return [
         'order_id' => $order_id,

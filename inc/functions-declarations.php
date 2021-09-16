@@ -76,7 +76,7 @@ function goicc_get_user_extra_fields() {
                     'desc' => __('','goicc')
                 ],
                 'nr_reg_com' => [
-                    'title' => __('Nr. Reg. Com.','goicc'),
+                    'title' => __('Nr. Ord. Reg. Com.', 'goicc'),
                     'required' => true,
                     'desc' => __('','goicc')
                 ],

@@ -203,22 +203,16 @@ function user_account_current_tab(){
     return $current_tab;
 }
 
-function check_active_subscription_to_course($user_id, $course_id){
+function get_subscription_data($user_id, $course_id){
 
     if(!$user_id)
     return ['active' => false];
 
     if(!is_user_logged_in()) 
     return ['active' => false];
-    
-    if(user_can( $user_id, 'administrator' )) 
-    return ['active' => true];
 
     if(!$course_id)
     return ['active' => false];
-
-    if(get_post_field( 'post_author', $course_id ) === $user_id)
-    return ['active' => true];
 
     // Get list of products IDs for current course
     $connected_products = get_posts( array(
@@ -233,13 +227,14 @@ function check_active_subscription_to_course($user_id, $course_id){
     date_default_timezone_set(get_option('timezone_string'));
     
     // Check ACTIVE subscription
-    // status paid
+    // order status completed
     // date between start and end
     // in list of products connected to course
     // orders connected to user
     $args = array(
         'nopaging' => true,
         'suppress_filters' => false,
+		'post_status' => 'publish',
         'post_type' => array( 'goicc_order' ),
         'connected_type' => 'user_to_order',
         'connected_items' => $user_id,
@@ -273,6 +268,7 @@ function check_active_subscription_to_course($user_id, $course_id){
     $args_future = array(
         'nopaging' => true,
         'suppress_filters' => false,
+		'post_status' => 'publish',
         'post_type' => array( 'goicc_order' ),
         'connected_type' => 'user_to_order',
         'connected_items' => $user_id,
@@ -324,4 +320,84 @@ function check_active_subscription_to_course($user_id, $course_id){
     }
     
     return $return;
+}
+
+function check_active_subscription_to_course($user_id, $course_id){
+
+    if(!$user_id)
+    return false;
+
+    if(!is_user_logged_in()) 
+    return false;
+    
+    if(user_can( $user_id, 'administrator' )) 
+    return true;
+
+    if(!$course_id)
+    return false;
+
+    if(get_post_field( 'post_author', $course_id ) === $user_id)
+    return true;
+
+    // Get list of products IDs for current course
+    $connected_products = get_posts( array(
+        'connected_type' => 'posts_to_product',
+        'connected_items' => $course_id,
+        'nopaging' => true,
+        'suppress_filters' => false,
+        'fields' => 'ids'
+    ) );
+    
+    // set timezone from wordpress settings
+    date_default_timezone_set(get_option('timezone_string'));
+    
+    // Check ACTIVE subscription
+    // order status completed
+    // date between start and end
+    // in list of products connected to course
+    // orders connected to user
+    $args = array(
+        'nopaging' => true,
+        'suppress_filters' => false,
+		'post_status' => 'publish',
+        'post_type' => array( 'goicc_order' ),
+        'connected_type' => 'user_to_order',
+        'connected_items' => $user_id,
+        'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key'     => 'goicc_order_product_id',
+                'value'   => $connected_products,
+                'compare' => 'IN',
+            ),
+            array(
+                'key'     => 'goicc_order_status',
+                'value'   => 'completed',
+                'compare' => 'IN',
+            ),
+            array(
+                'key'     => 'goicc_subscription_start_date',
+                'value'   => date('Ymd'),
+                //'value'   => //date('Ymd', strtotime('+1 day')),
+                'compare' => '<=',
+            ),
+            array(
+                'key'     => 'goicc_subscription_end_date',
+                'value'   => date('Ymd'),
+                'compare' => '>=',
+            ),
+        ),
+    );
+
+    date_default_timezone_set('UTC');
+
+    $posts = get_posts($args);
+
+    if($posts && count($posts) > 0){
+        return true;
+    }else{
+        return false;
+    }
+    
+    return false;
 }

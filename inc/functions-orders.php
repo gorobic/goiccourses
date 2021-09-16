@@ -30,7 +30,32 @@ function generate_invoice($order_id, $order_meta){
             'payment_method' => $order_meta['goicc_payment_method'][0],
             'extra_details' => do_action('goicc_invoice_product_extra_details'),
         ],
-        'seller' => [],
+        'seller' => [
+            'company_name' => [
+                'l' => __('Unitatea', 'goicc'),
+                'v' => 'SC ANA MUNTEANU ART SRL',
+            ],
+            'vat_code' => [
+                'l' => __('VAT Code','goicc'),
+                'v' => '36653965 ',
+            ],
+            'nr_reg_com' => [
+                'l' => __('Nr. Ord. Reg. Com.', 'goicc'),
+                'v' => 'J40/13823/20.10.2016',
+            ],
+            'headquarters' => [
+                'l' => __('Sediu social', 'goicc'),
+                'v' => 'București, Sector 2, str. Lizeanu, nr. 29, et. 3',
+            ],
+            'iban' => [
+                'l' => __('IBAN', 'goicc'),
+                'v' => 'RO44INGB0000999906349739',
+            ],
+            'bank_name' => [
+                'l' => __('Bank name','goicc'),
+                'v' => 'INGB CENTRALA',
+            ],
+        ],
         'buyer' => [
             'name' => [
                 'l' => __('Buyer', 'goicc'),
@@ -141,7 +166,13 @@ function generate_invoice_table($order_id, $fiscal = false){
                         }
                     </style>
                     <div class="row">
-                        <div class="company mb-4 col-sm-6">company info</div>
+                        <div class="company mb-4 col-sm-6">
+                            <?php foreach($invoice_data['seller'] as $seller){ ?>
+                                <div>
+                                    <?php echo $seller['l'] . ': ' . $seller['v']; ?>
+                                </div>
+                            <?php } unset($seller); ?>
+                        </div>
                         <div class="customer mb-4 col-sm-6">
                             <div>
                                 <?php echo $invoice_data['buyer']['name']['l'] . ': ' . $invoice_data['buyer']['name']['v']; ?>

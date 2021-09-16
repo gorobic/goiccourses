@@ -10,7 +10,8 @@
         ) );
 
         global $user_id, $registration_url, $login_url;
-        $active_subscription = check_active_subscription_to_course($user_id, get_the_ID())['active'];
+        $active_subscription = check_active_subscription_to_course($user_id, get_the_ID());
+        // $active_subscription = get_subscription_data($user_id, get_the_ID())['active'];
 
     ?>
         </div>

@@ -202,6 +202,17 @@ function custom_enqueue_wp_admin() {
 }
 add_action( 'admin_enqueue_scripts', 'custom_enqueue_wp_admin' );
 
+// Setup from for wp_mail
+add_filter( 'wp_mail_from_name', function( $name ) {
+  return get_bloginfo('name');
+} );
+
+add_filter( 'wp_mail_from', function( $email ) {
+  $url = get_bloginfo('url');
+  $url_data = parse_url( $url );
+  $domain = preg_replace('#^www\.(.+\.)#i', '$1', $url_data['host']);
+  return 'noreply@' . $domain;
+} );
 
 require get_parent_theme_file_path( '/inc/functions-ecommerce.php' );
 require get_parent_theme_file_path( '/inc/functions-declarations.php' );

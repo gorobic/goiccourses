@@ -53,12 +53,12 @@ $order_fields = array(
 		'ajax' => 0,
 		'placeholder' => '',
 	),
-	array( // @todo: transform in camp de text care se completeaza cu valoarea. toate metodele de plata trecute la descriere
+	array(
 		'key' => 'field_order_payment_method',
 		'label' => 'Payment method',
 		'name' => 'goicc_payment_method',
-		'type' => 'select',
-		'instructions' => '',
+		'type' => 'text',
+		'instructions' => 'Available: '. implode(', ', array_keys($payment_method)),
 		'required' => 0,
 		'conditional_logic' => 0,
 		'wrapper' => array(
@@ -66,7 +66,7 @@ $order_fields = array(
 			'class' => '',
 			'id' => '',
 		),
-		'choices' => $payment_method,
+		//'choices' => $payment_method,
 		'default_value' => false,
 		'allow_null' => 1,
 		'multiple' => 0,

@@ -12,7 +12,7 @@ if($connected_courses){
 
 global $user_id;
 
-$active_subscription = check_active_subscription_to_course($user_id, $course_id)['active'];
+$active_subscription = check_active_subscription_to_course($user_id, get_the_ID());
 if(!$active_subscription){
     header('Location: '.home_url());
     die();
@@ -26,7 +26,7 @@ if(!$active_subscription){
         // Vide lessons must be assigned to course. If not, stop rendering this page.
         if(!$course_id){
 
-            // aici ar trebui să vină un mesaj că acest capitol nu poate fi accesat. DELOC
+            // @todo: aici ar trebui să vină un mesaj că acest capitol nu poate fi accesat. DELOC
 
         }else{ 
 
@@ -113,13 +113,13 @@ if(!$active_subscription){
                                         </a>
                                     </li>
                                 <?php } ?>
-                                <?php if($homework){ ?>
+                                <?php /*if($homework){ ?>
                                     <li class="nav-item">
                                         <a class="nav-link" id="homework-tab" data-toggle="tab" href="#homework" role="tab" aria-controls="homework" aria-selected="false">
                                             <?php _e('Homework','goicc'); ?>
                                         </a>
                                     </li>
-                                <?php } ?>
+                                <?php }*/ ?>
                             </ul>
                             <div class="tab-content pt-3" id="chapter-tabs-content">
                                 <div id="details" class="tab-pane fade show active" role="tabpanel" aria-labelledby="details-tab">
@@ -131,17 +131,23 @@ if(!$active_subscription){
                                         <?php } ?>
                                     </div>
                                     
-                                    <?php if( '' !== get_post()->post_content ) { ?>
+                                    <?php //if( '' !== get_post()->post_content ) { ?>
 
-                                        <div class="entry">
-                                            <div class="h4">
+                                        <div class="entry mt-2">
+                                            <?php /* <div class="h4">
                                                 <?php _e('Chapter details','goicc'); ?>
-                                            </div>
+                                            </div> */ ?>
 
-                                            <?php the_content(); ?>
+                                            <?php 
+                                            $course_post = get_post($course_id);
+                                            $course_content = $course_post->post_content;
+                                            $course_content = apply_filters('the_content', $course_content);
+                                            $course_content = str_replace(']]>', ']]&gt;', $course_content);
+                                            echo $course_content;
+                                            // the_content(); ?>
                                         </div>
 
-                                    <?php } ?>
+                                    <?php //} ?>
                                 </div>
                                 <?php if($references){ ?>
                                     <div id="references" class="tab-pane fade" role="tabpanel" aria-labelledby="references-tab">
@@ -165,11 +171,11 @@ if(!$active_subscription){
                                         </div>
                                     </div>
                                 <?php } ?>
-                                <?php if($homework){ ?>
+                                <?php /*if($homework){ ?>
                                     <div id="homework" class="tab-pane fade" role="tabpanel" aria-labelledby="homework-tab">
                                         <?php echo $homework; ?>
                                     </div>
-                                <?php } ?>
+                                <?php }*/ ?>
                             </div>
                         </div>                        
                     </div>
@@ -177,26 +183,28 @@ if(!$active_subscription){
                         <?php if($videos){ ?>
                             <div class="nav videolessons-videos d-block" id="videolessons-videos">
                                 <?php foreach($videos as $index => $video){ $tab_nr = $index+1; ?>
+
+                                    <?php 
+                                        // $video_json = file_get_contents("http://vimeo.com/api/v2/video/" . $video["goicc_videolessons_videos_id"] . ".json");
+                                        // $video_data = json_decode($video_json, true);
+                                        // $video_thumb = str_replace('http:','https:', $video_data[0]['thumbnail_small']);
+
+                                        $video_json = file_get_contents("http://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/" . $video["goicc_videolessons_videos_id"]);
+                                        $video_data = json_decode($video_json, true);
+                                        $video_thumb = str_replace('http:','https:', $video_data['thumbnail_url']);
+                                        $video_duration = $video_data['duration'];
+                                        $video_title = $video_data['title'];
+                                    ?>
                                     
                                     <div 
                                         data-toggle="tab" 
                                         data-target="#video-<?php echo $tab_nr; ?>"
                                         data-index="<?php echo $tab_nr; ?>"
                                         data-id="<?php echo $video["goicc_videolessons_videos_id"]; ?>"
-                                        data-title="<?php echo $video["goicc_videolessons_videos_title"]; ?>"
+                                        data-title="<?php echo $video_title /* $video["goicc_videolessons_videos_title"]*/ ; ?>"
                                         class="element row no-gutters border-bottom border-left border-right <?php if($index === 0){echo 'border-top';} ?>"
                                     >
                                         <div class="col-3 p-2">
-                                            <?php 
-                                            // $video_json = file_get_contents("http://vimeo.com/api/v2/video/" . $video["goicc_videolessons_videos_id"] . ".json");
-                                            // $video_data = json_decode($video_json, true);
-                                            // $video_thumb = str_replace('http:','https:', $video_data[0]['thumbnail_small']);
-
-                                            $video_json = file_get_contents("http://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/" . $video["goicc_videolessons_videos_id"]);
-                                            $video_data = json_decode($video_json, true);
-                                            $video_thumb = str_replace('http:','https:', $video_data['thumbnail_url']);
-                                            $video_duration = $video_data['duration'];
-                                            ?>
                                             <div class="bg-img p-ar-3x2 bg-cover lazy thumbnail" 
                                                 data-src="<?php echo $video_thumb; ?>"
                                                 <?php /*data-src="https://img.youtube.com/vi/<?php echo $video["goicc_videolessons_videos_id"]; ?>/default.jpg" */ ?>
@@ -204,7 +212,7 @@ if(!$active_subscription){
                                             </div>
                                         </div>
                                         <div class="col-6 py-2 small">
-                                            <?php echo $tab_nr . '. ' . $video["goicc_videolessons_videos_title"]; ?>
+                                            <?php echo /*$tab_nr . '. ' . */ $video_title /* $video["goicc_videolessons_videos_title"] */ ; ?>
                                         </div>
                                         <div class="col-3 p-2 small text-right">
                                             <?php echo seconds_to_time($video_duration /*$video["goicc_videolessons_videos_duration"]*/); ?>                                

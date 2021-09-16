@@ -41,8 +41,8 @@ if($connected_courses){
     $connected_course = $connected_courses[0];
     $course_id = $connected_course->ID;
 }
-$active_subscription = check_active_subscription_to_course($user_id, $course_id);
-if($active_subscription['active'] || $active_subscription['future']){
+$subscription_data = get_subscription_data($user_id, $course_id);
+if($subscription_data['active'] || $subscription_data['future']){
     $course_permalink = get_the_permalink($course_id);
 
     header('Location: '.$course_permalink);
