@@ -118,14 +118,14 @@ get_header(); ?>
                     <div class="card-header" id="question-heading-1">
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#question-collapse-1" aria-expanded="true" aria-controls="question-collapse-1">
-                        Întrebarea cu numărul 1
+                        Cum mă pot înscrie la curs?
                         </button>
                     </h2>
                     </div>
 
                     <div id="question-collapse-1" class="collapse show" aria-labelledby="question-heading-1" data-parent="#accordion-front-page">
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, cupiditate non at consectetur dolorum tenetur corporis, veritatis commodi modi pariatur, laudantium tempore mollitia odio numquam atque sed. Modi, ratione omnis?
+                    Pentru a începe cursul apasă oricare din butoanele cu titlul începe cursul. Vei fi redirecționat spre căsuța care te va ajuta să selectezi o opțiune de plată și să creezi un cont personal pe care pe care îl poți accesa de fiecare dată când vrei să privești lecțiile.
                     </div>
                     </div>
                 </div>
@@ -133,14 +133,14 @@ get_header(); ?>
                     <div class="card-header" id="question-heading-2">
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#question-collapse-2" aria-expanded="false" aria-controls="question-collapse-2">
-                        Întrebarea cu numărul 2 care în titlu mai are câteva cunvinte pentru ca acesta să devină mai lung și să fie în două rânduri?
+                        Ce este Curs Academic by Ana Munteanu?
                         </button>
                     </h2>
                     </div>
 
                     <div id="question-collapse-2" class="collapse" aria-labelledby="question-heading-2" data-parent="#accordion-front-page">
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, cupiditate non at consectetur dolorum tenetur corporis, veritatis commodi modi pariatur, laudantium tempore mollitia odio numquam atque sed. Modi, ratione omnis?
+                    Ana Munteanu propune prima etapă de curs online care presupune studierea temelor conform programului de studii academic în același timp cu profesorul și are la bază principiul academic clasic de studiere a desenului.
                     </div>
                     </div>
                 </div>
@@ -148,14 +148,14 @@ get_header(); ?>
                     <div class="card-header" id="question-heading-3">
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#question-collapse-3" aria-expanded="false" aria-controls="question-collapse-3">
-                        Întrebarea cu numărul 3
+                        Ce este inclus în curs?
                         </button>
                     </h2>
                     </div>
 
                     <div id="question-collapse-3" class="collapse" aria-labelledby="question-heading-3" data-parent="#accordion-front-page">
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, cupiditate non at consectetur dolorum tenetur corporis, veritatis commodi modi pariatur, laudantium tempore mollitia odio numquam atque sed. Modi, ratione omnis?
+                    Cursul online de desen te va ajuta să înțelegi de ce materiale ai nevoie, spațiu creativ și cum poți folosi materialele în cadrul temelor pe care le vom realiza împreună. De asemenea cursul îți va pune la dispoziție poze de referință după modelele din curs.
                     </div>
                     </div>
                 </div>
@@ -165,14 +165,14 @@ get_header(); ?>
                     <div class="card-header" id="question-heading-4">
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#question-collapse-4" aria-expanded="false" aria-controls="question-collapse-4">
-                        Întrebarea cu numărul 4 și cu încă vreo două cuvinte în titlu
+                        Aceste cursuri sunt acreditate?
                         </button>
                     </h2>
                     </div>
 
                     <div id="question-collapse-4" class="collapse" aria-labelledby="question-heading-4" data-parent="#accordion-front-page">
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, cupiditate non at consectetur dolorum tenetur corporis, veritatis commodi modi pariatur, laudantium tempore mollitia odio numquam atque sed. Modi, ratione omnis?
+                    Acest curs oferă resurse pentru a cunoaste baza artelor plastice precum este desenul prin metode academice clasice. Acest curs nu oferă acreditare într-o profesie specifică sau o diplomă universitară.
                     </div>
                     </div>
                 </div>
@@ -180,14 +180,14 @@ get_header(); ?>
                     <div class="card-header" id="question-heading-5">
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#question-collapse-5" aria-expanded="false" aria-controls="question-collapse-5">
-                        Întrebarea cu numărul 5
+                        Pot fi descărcate lecțiile video?
                         </button>
                     </h2>
                     </div>
 
                     <div id="question-collapse-5" class="collapse" aria-labelledby="question-heading-5" data-parent="#accordion-front-page">
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, cupiditate non at consectetur dolorum tenetur corporis, veritatis commodi modi pariatur, laudantium tempore mollitia odio numquam atque sed. Modi, ratione omnis?
+                    Tot conținutul site-ului este proprietatea Vânzătorului înregistrată în mod corespunzător la Oficiul Român pentru Drepturi de Autor. Dreptul de autor sau orice alte drepturi conexe aparțin Vânzătorului. Este interzisă copierea preluarea, reproducerea, publicarea, transmiterea, vanzarea, distribuția parțială, integrală sau modificarea conținutului. 
                     </div>
                     </div>
                 </div>
@@ -195,14 +195,14 @@ get_header(); ?>
                     <div class="card-header" id="question-heading-6">
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#question-collapse-6" aria-expanded="false" aria-controls="question-collapse-6">
-                        Întrebarea cu numărul 6 cu un titlu mull mai lung decât la celelalte întrebări, pentru o simulare mai realistă!
+                        Pot împărți cursul cu un prieten?
                         </button>
                     </h2>
                     </div>
 
                     <div id="question-collapse-6" class="collapse" aria-labelledby="question-heading-6" data-parent="#accordion-front-page">
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, cupiditate non at consectetur dolorum tenetur corporis, veritatis commodi modi pariatur, laudantium tempore mollitia odio numquam atque sed. Modi, ratione omnis?
+                    Ofertele propuse pe site sunt destinate pentru studiul unui singur cursant.Este interzisă copierea preluarea, reproducerea, publicarea, transmiterea, vanzarea, distribuția parțială, integrală sau modificarea conținutului. Vezi <a href="<?php echo get_privacy_policy_url(); ?>" target="_blank" rel="nofollow">Termeni și Condiții</a>
                     </div>
                     </div>
                 </div>
@@ -210,17 +210,19 @@ get_header(); ?>
                     <div class="card-header" id="question-heading-7">
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#question-collapse-7" aria-expanded="false" aria-controls="question-collapse-7">
-                        Întrebarea cu numărul 7
+                        Care este politica de returnare?
                         </button>
                     </h2>
                     </div>
 
                     <div id="question-collapse-7" class="collapse" aria-labelledby="question-heading-7" data-parent="#accordion-front-page">
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, cupiditate non at consectetur dolorum tenetur corporis, veritatis commodi modi pariatur, laudantium tempore mollitia odio numquam atque sed. Modi, ratione omnis?
+                    În conformitate cu prevederile legale nu vă puteți retrage achiziția după data acordării dreptului de acces la cursul achiziționat sau după data de început a perioadei de acces la cursul pentru care ați optat. Prin urmare vă puteți retrage oricand din contract înainte de acordare a accesului la serviciile achiziționate. Vezi <a href="<?php echo get_privacy_policy_url(); ?>" target="_blank" rel="nofollow">Termeni și Condiții</a>
                     </div>
                     </div>
                 </div>
+
+                <a href="/faq/" class="my-4 d-inline-block"><?php _e('Read more F.A.Q.','goicc'); ?> <span class="small"><span class="goicicons-arrow-light small"></span></span></a>
             </div>
         </div>
     </div>
