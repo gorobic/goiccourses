@@ -54,7 +54,7 @@ function goicc_get_product_types() {
 function goicc_get_user_account_tabs() {
     $user_account_tabs = array(
         'account' => _x('Account', 'User account tab', 'goicc'), 
-        'courses' => _x('Courses', 'User account tab', 'goicc'), 
+        //'courses' => _x('Courses', 'User account tab', 'goicc'), 
         'billing' => _x('Billing info', 'User account tab', 'goicc'), 
         'billing-history' => _x('Billing history', 'User account tab', 'goicc')
     );

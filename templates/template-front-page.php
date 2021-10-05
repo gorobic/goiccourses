@@ -263,7 +263,7 @@ get_header(); ?>
                 <?php _e('Subscribe to this course! Choose a period that is more convenient for you.','goicc'); ?>
             </div>
         </div>
-        <?php echo do_shortcode('[course_product course=22]'); ?>
+        <?php echo do_shortcode('[course_product course=47]'); ?>
     </div>
 </div>
 
