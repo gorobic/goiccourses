@@ -12,7 +12,7 @@ get_header(); ?>
 
 <div class="front-jumbo position-relative bg-dark text-light">
     <div class="front-jumbo__bg bg-img bg-cover lazy" data-videobg data-ratio="56.25" data-src="<?php if($post_thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large')){ echo $post_thumbnail; } ?>">
-        <iframe src="https://player.vimeo.com/video/525452066?background=1&autoplay=1&loop=1&autopause=0&byline=0&title=0"
+        <iframe src="https://player.vimeo.com/video/592576609?background=1&autoplay=1&loop=1&autopause=0&byline=0&title=0"
         frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay; fullscreen"></iframe>
     </div>
     <div class="front-jumbo__content h-100 w-100 d-flex align-items-center py-5 py-lg-6 position-relative">
@@ -28,12 +28,12 @@ get_header(); ?>
                                 Un studiu complet al desenului acasă
                             </div>
                             <div class="mb-2">
-                                <a href="https://player.vimeo.com/video/525452066?autoplay=1&loop=1&autopause=0&byline=0&title=0" class="btn btn-primary rounded-0 px-3 px-md-4" data-fancybox>
+                                <a href="https://player.vimeo.com/video/592576609?autoplay=1&loop=1&autopause=0&byline=0&title=0" class="btn btn-primary rounded-0 px-3 px-md-4" data-fancybox>
                                     <?php _e('privește 10 minute gratuit', 'goicc'); ?>
                                 </a>
                             </div>
                             <div>
-                                <a href="https://player.vimeo.com/video/525452066?autoplay=1&loop=1&autopause=0&byline=0&title=0" class="btn text-light rounded-0" data-fancybox>
+                                <a href="https://player.vimeo.com/video/591019853?autoplay=1&loop=1&autopause=0&byline=0&title=0" class="btn text-light rounded-0" data-fancybox>
                                     <?php _e('PRIVEȘTE PROMO', 'goicc'); ?>
                                 </a>
                             </div>
@@ -49,24 +49,14 @@ get_header(); ?>
     <div class="row">
         <div class="col-lg-7 pr-lg-5 mb-5">
             <h4 class="mb-4">
-                Zeci de ore de video și poze de referință
+                80 de ore de video și poze de referință
             </h4>
 
             <?php 
             $front_images = [
-                '/wp-content/uploads/2020/12/2-nature',
-                '/wp-content/uploads/2020/12/fantasy-3041033_640',
-                '/wp-content/uploads/2020/12/57e4d1474e5ba914f1dc8460962e33791c3ad6e04e5074417d2f7dd49f4ec6_640',
-                '/wp-content/uploads/2020/12/54e1d24b4d5aaa14f1dc8460962e33791c3ad6e04e5074417d2e7ed69f49cd_640',
-                '/wp-content/uploads/2020/12/2-nature',
-                '/wp-content/uploads/2020/12/fantasy-3041033_640',
-                '/wp-content/uploads/2020/12/57e4d1474e5ba914f1dc8460962e33791c3ad6e04e5074417d2f7dd49f4ec6_640',
-                '/wp-content/uploads/2020/12/54e1d24b4d5aaa14f1dc8460962e33791c3ad6e04e5074417d2e7ed69f49cd_640',
-                '/wp-content/uploads/2020/12/2-nature',
-                '/wp-content/uploads/2020/12/fantasy-3041033_640',
-                '/wp-content/uploads/2020/12/57e4d1474e5ba914f1dc8460962e33791c3ad6e04e5074417d2f7dd49f4ec6_640',
-                '/wp-content/uploads/2020/12/54e1d24b4d5aaa14f1dc8460962e33791c3ad6e04e5074417d2e7ed69f49cd_640',
-
+                '/wp-content/uploads/2021/10/1-curs-online-academic-de-desen-ana-munteanu-ochi-anatomic.jpg',
+                '/wp-content/uploads/2021/10/2-curs-online-academic-de-desen-ana-munteanu-ochi-anatomic.jpg',
+                '/wp-content/uploads/2021/10/3-curs-online-academic-de-desen-ana-munteanu-ochi-anatomic.jpg',
             ];
             ?>
             <div class="row mx-n2">
@@ -81,9 +71,15 @@ get_header(); ?>
         </div>
         <div class="col-lg-5 mb-5">
             <div class="mb-4">
-                Cursul conține prima etapă de studiu al desenului. În (aprox) 25 de ore de curs veți învăța noțiuni de perpectivă, constructie, anatomie. 
-                <br><br>
-                Cursul propune poze de referință după care puteți desena împreună cu profesorul urmărind fiecare etapă. Prima ediție a cursului te învață să construiești să hașurezi și să desenezi un portret uman.
+                <p>
+                    Cursul conține prima etapă a studiului desenului academic. În 80 ore de curs veți studia și aplica în practică cunoștințe de perspectivă, anatomie și prelucrare tonală.
+                </p>
+                <p>
+                    Cursul oferă atât rezultatul final al realizării temelor cît și poze de referință pentru a putea studia în același timp cu profesorul. 
+                </p>
+                <p>
+                    În cadrul cursului nu există teme pentru acasă. Pentru că aveți posibilitatea să urmăriți profesorul în timp ce realizează temele prin intermediul procedeelor tehnice profesioniste, veți studia desenul în același timp cu profesorul.  
+                </p>
             </div>
             <a href="#start-course" class="btn btn-primary btn-block rounded-0 px-3 px-lg-4">
                 Începe cursul
@@ -245,10 +241,10 @@ get_header(); ?>
         </div>
         <div class="col-lg-6 text-center text-lg-left">
             <p>
-                Născută la Chișinău, Republica Moldova, este un artist plastic și sand artist.
+            Master în arte a facultății de Arte Plastice, Academia de Muzică teatru și Arte Plastice din Republica Moldova, Ana Munteanu a fost timp de 6 ani lector superior a instituției pe care a absolvit-o in 2008. În 2010 a obținut titlul de “Master of Arts”.
             </p>
             <p>
-                Picturile ei sunt prezente în numeroase colecții particulare din SUA, Italia, Franța, România, Cehia și Moldova.
+            Ana Munteanu este artist plastic și profesor stabilită la București unde organizează cursuri de grup și particulare, participă la expoziții și evoluează în spectacole, show-uri televizate și turnee internaționale creând în tehnica desenului cu nisip.
             </p>
             <a href="/despre-artist/"><?php _e('Read more about artist','goicc'); ?> <span class="small"><span class="goicicons-arrow-light small"></span></span></a>
         </div>
