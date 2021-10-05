@@ -239,7 +239,7 @@ get_header(); ?>
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 mb-3">
-            <div class="bg-img bg-cover p-ar-1x1 lazy rounded-circle mx-auto ml-sm-0 mx-lg-auto" style="max-width: 180px;" data-src="https://sandart.ro/wp-content/uploads/2018/03/ana-munteanu.jpg"></div>
+            <div class="bg-img bg-cover p-ar-1x1 lazy rounded-circle mx-auto ml-sm-0 mx-lg-auto" style="max-width: 180px;" data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2021/10/ana-munteanu-curs-academic.jpg"></div>
         </div>
         <div class="col-lg-6 text-center text-lg-left">
             <p>

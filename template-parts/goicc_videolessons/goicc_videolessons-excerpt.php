@@ -8,12 +8,12 @@
     if($active_subscription){
         $permalink = esc_url( get_permalink() );
     }else{
-        $permalink= false;
+        $permalink = false;
     }
-    $videolessons_videos = get_field('goicc_videolessons_videos');
-    if($videolessons_videos){
-        $duration = array_sum(array_column($videolessons_videos, 'goicc_videolessons_videos_duration'));
-    }
+    // $videolessons_videos = get_field('goicc_videolessons_videos');
+    // if($videolessons_videos){
+    //     $duration = array_sum(array_column($videolessons_videos, 'goicc_videolessons_videos_duration'));
+    // }
     
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
