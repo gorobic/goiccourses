@@ -54,14 +54,14 @@ get_header(); ?>
 
             <?php 
             $front_images = [
-                '/wp-content/uploads/2021/10/1-curs-online-academic-de-desen-ana-munteanu-ochi-anatomic.jpg',
-                '/wp-content/uploads/2021/10/2-curs-online-academic-de-desen-ana-munteanu-ochi-anatomic.jpg',
-                '/wp-content/uploads/2021/10/3-curs-online-academic-de-desen-ana-munteanu-ochi-anatomic.jpg',
+                '/wp-content/uploads/2021/10/1-curs-online-academic-de-desen-ana-munteanu-ochi-anatomic',
+                '/wp-content/uploads/2021/10/2-curs-online-academic-de-desen-ana-munteanu-venus-creion',
+                '/wp-content/uploads/2021/10/3-curs-online-academic-de-desen-ana-munteanu-forme-geometrice',
             ];
             ?>
             <div class="row mx-n2">
                 <?php foreach($front_images as $front_image){ ?>
-                    <div class="col-lg-2 col-sm-3 col-4 px-2 mb-3">
+                    <div class="col-4 px-1 mb-3">
                         <a href="<?php echo $front_image; ?>.jpg" data-fancybox="front-images">
                             <img src="<?php echo $front_image; ?>-150x150.jpg" class="w-100" alt="">
                         </a>
@@ -75,7 +75,7 @@ get_header(); ?>
                     Cursul conține prima etapă a studiului desenului academic. În 80 ore de curs veți studia și aplica în practică cunoștințe de perspectivă, anatomie și prelucrare tonală.
                 </p>
                 <p>
-                    Cursul oferă atât rezultatul final al realizării temelor cît și poze de referință pentru a putea studia în același timp cu profesorul. 
+                    Cursul oferă atât rezultatul final al realizării temelor cât și poze de referință pentru a putea studia în același timp cu profesorul. 
                 </p>
                 <p>
                     În cadrul cursului nu există teme pentru acasă. Pentru că aveți posibilitatea să urmăriți profesorul în timp ce realizează temele prin intermediul procedeelor tehnice profesioniste, veți studia desenul în același timp cu profesorul.  
@@ -91,14 +91,16 @@ get_header(); ?>
 <div class="container mb-5 mb-lg-6">
     <div class="bg-light px-4 py-5 px-lg-6 border border-gray-200 text-center">
         <h4 class="text-center mb-4 mb-lg-5">
-            Te poți consulta cu profesorul!
+            Te poți consulta cu profesorul online!
         </h4>
         
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Dacă vrei să prezinți profesorului temele realizate în timpul cursului o poți face pe grupul de <a href="#" target="_blank" rel="nofollow">Facebook</a> destinat celor care s-au înscris la curs. 
         <hr class="w-25">
-        A modi, illo minus, praesentium quam culpa fugiat quibusdam libero quis eligendi error aperiam! 
+        Aici Ana Munteanu poate oferi în fiecare joi comentarii legate de lucrările realizate de voi fie în categoria discuții fie prin mesaje.
         <hr class="w-25">
-        Distinctio quas harum hic dolores porro ut officia?
+        Dacă nu folosești facebook poți scrie un email cu poza atașată la <a href="mailto:contact@cursacademic.ro" target="_blank" rel="nofollow">contact@cursacademic.ro</a>
+        <hr class="w-25">
+        De asemenea pe grup vor fi publicate noutăți și campanii legate de curs.
     </div>
 </div>
 
