@@ -141,9 +141,16 @@ if(!$active_subscription){
                                             <?php 
                                             $course_post = get_post($course_id);
                                             $course_content = $course_post->post_content;
-                                            $course_content = apply_filters('the_content', $course_content);
-                                            $course_content = str_replace(']]>', ']]&gt;', $course_content);
-                                            echo $course_content;
+                                            if($course_content){
+                                                $course_content = apply_filters('the_content', $course_content);
+                                                $course_content = str_replace(']]>', ']]&gt;', $course_content);
+                                                ?>
+                                                <div class="h4">
+                                                    <?php _e('Course description','goicc'); ?>
+                                                </div> 
+                                                <?php
+                                                echo $course_content;
+                                            }
                                             // the_content(); ?>
                                         </div>
 

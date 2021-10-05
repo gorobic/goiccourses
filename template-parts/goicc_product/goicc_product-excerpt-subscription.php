@@ -1,6 +1,6 @@
 <?php 
 $meta = get_post_meta(get_the_ID()); 
-global $checkout_page_permalink;
+//global $checkout_page_permalink;
 ?>
 <div class="py-row h-100">
     <div class="shadow bg-white border-top border-secondary h-100 d-flex flex-column justify-content-between">
@@ -24,7 +24,7 @@ global $checkout_page_permalink;
             </div>
         </div>
         <div class="px-3 mb-3">
-            <a href="<?php echo $checkout_page_permalink . '?id='. get_the_ID(); ?>" rel="nofollow" class="btn btn-outline-primary rounded-0 d-block">
+            <a href="<?php echo CHECKOUT_PAGE_PERMALINK . '?id='. get_the_ID(); ?>" rel="nofollow" class="btn btn-outline-primary rounded-0 d-block">
                 <?php _e('Get started','goicc'); ?>
             </a>
         </div>

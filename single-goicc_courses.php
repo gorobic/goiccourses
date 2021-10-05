@@ -29,7 +29,7 @@
                                 </header>
 
                                 <div class="entry">
-                                    <?php the_content(); ?>
+                                    <?php the_excerpt(); ?>
                                 </div>
                                 <div class="course-details mt-4">
                                     <?php if($connected_videolessons->have_posts()){ ?>
