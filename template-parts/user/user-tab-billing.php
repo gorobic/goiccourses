@@ -12,14 +12,14 @@
     <div class="row">
         <div class="col-lg-6">
             <p class="form-username">
-                <label for="first_name"><?php _e('First Name', 'profile'); ?> *</label>
+                <label for="first_name"><?php _e('First Name', 'goicc'); ?> *</label>
                 <input class="text-input form-control" name="first_name" type="text" id="first_name"
                     value="<?php if(is_user_logged_in()){ the_author_meta( 'first_name', $user_id ); } ?>" required />
             </p>
         </div>
         <div class="col-lg-6">
             <p class="form-username">
-                <label for="last_name"><?php _e('Last Name', 'profile'); ?> *</label>
+                <label for="last_name"><?php _e('Last Name', 'goicc'); ?> *</label>
                 <input class="text-input form-control" name="last_name" type="text" id="last_name"
                     value="<?php if(is_user_logged_in()){ the_author_meta( 'last_name', $user_id ); } ?>" required />
             </p>

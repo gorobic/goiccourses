@@ -53,7 +53,7 @@ $current_tab = user_account_current_tab();
         <?php endwhile; ?>
         <?php else: ?>
         <p class="no-data">
-            <?php _e('Sorry, no page matched your criteria.', 'profile'); ?>
+            <?php _e('Sorry, no page matched your criteria.', 'goicc'); ?>
         </p><!-- .no-data -->
         <?php endif; ?>
     </div>

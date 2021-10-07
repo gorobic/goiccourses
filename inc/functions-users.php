@@ -116,23 +116,23 @@ function validate_and_save_user_fields($data, $user_id, $user_password = false){
                 if ( $data['pass1'] === $data['pass2'] )
                     wp_update_user( array( 'ID' => $user_id, 'user_pass' => esc_attr( $data['pass1'] ) ) );
                 else
-                    $error[] = __('The passwords you entered do not match. Your password was not updated.', 'profile');
+                    $error[] = __('The passwords you entered do not match. Your password was not updated.', 'goicc');
             }else{
-                $error[] = __('The passwords you entered do not match. Your password was not updated.', 'profile'); 
+                $error[] = __('The passwords you entered do not match. Your password was not updated.', 'goicc'); 
             }
         }else{
-            $error[] = __('Current Password doesn\'t match the existing password.', 'profile'); 
+            $error[] = __('Current Password doesn\'t match the existing password.', 'goicc'); 
         }
     }elseif( !empty($data['pass1'] ) || !empty( $data['pass2'] ) ){
-        $error[] = __('You must confirm the Current Password.', 'profile'); 
+        $error[] = __('You must confirm the Current Password.', 'goicc'); 
     }
 
     // Update user email.
     if ( !empty( $data['email'] ) ){
         if (!is_email(esc_attr( $data['email'] )))
-            $error[] = __('The Email you entered is not valid. Please try again.', 'profile');
+            $error[] = __('The Email you entered is not valid. Please try again.', 'goicc');
         elseif(email_exists(esc_attr( $data['email'] )) && (email_exists(esc_attr( $data['email'] )) !== $user_id ) )
-            $error[] = __('This Email is already used by another user. Try a different one.', 'profile');
+            $error[] = __('This Email is already used by another user. Try a different one.', 'goicc');
         else{
             wp_update_user( array ('ID' => $user_id, 'user_email' => esc_attr( $data['email'] )));
         }
