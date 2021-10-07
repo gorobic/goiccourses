@@ -79,8 +79,8 @@
                 $new_order = create_order($order_data, $user_id);
 
                 if($new_order){
-                    var_dump($order_data);
-                    var_dump($new_order);
+                    // var_dump($order_data);
+                    // var_dump($new_order);
 
                     $account_page = accout_page_url();
                     $new_order_url = $account_page . '?tab=billing-history&order_id=' . $new_order['order_id'] . '-' . $new_order['order_unique_id'];

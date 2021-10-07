@@ -127,7 +127,7 @@ add_action( 'goicc_do_subscription_update', 'goicc_cron_subscription_update' );
 //create your function, that runs on cron
 function goicc_cron_subscription_update() {
     // @todo: rand de cod temporar. de șters ulterior
-    wp_mail( 'gorobic@gmail.com', 'Cursuri hook zilnic', 'Continutul hook-ului' );
+    // wp_mail( 'gorobic@gmail.com', 'Cursuri hook zilnic', 'Continutul hook-ului' );
 
     $args = array(
         'nopaging' => true,
@@ -157,7 +157,6 @@ function goicc_cron_subscription_update() {
     $posts = get_posts($args);
     if($posts){
         $payment_method = goicc_get_payment_method();
-        $account_page = accout_page_url();
         foreach($posts as $post){
             $post = (array) $post;
             
@@ -174,6 +173,7 @@ function goicc_cron_subscription_update() {
             $order_data['user_id'] = $user_id;
             $order_data['first_name'] = get_the_author_meta( 'first_name', $user_id );
             $order_data['last_name'] = get_the_author_meta( 'last_name', $user_id );
+            $order_data['user_email'] = get_the_author_meta( 'user_email', $user_id );
             $order_data['is_company'] = get_the_author_meta( 'is_company', $user_id );
             $order_data['product_id'] = $product_id;
 
@@ -195,18 +195,35 @@ function goicc_cron_subscription_update() {
             $new_order = create_order($order_data, $user_id);
 
             if($new_order){
+                // var_dump($order_data);
+                // var_dump($new_order);
 
+                $account_page = accout_page_url();
                 $new_order_url = $account_page . '?tab=billing-history&order_id=' . $new_order['order_id'] . '-' . $new_order['order_unique_id'];
-                
-                
-                // @todo: de trimis email cand se creaza noua factura if create_order returneaza id-ul orderului.
-                // in email trimit link catre cabinetul personal direct la order sa il achite
-            
-                // @todo: de trimis email cand se creaza noua factura if create_order returneaza id-ul orderului.
-                // in email trimit link catre cabinetul personal direct la order sa il achite
+                $product_title = get_the_title($order_data['product_id']);
+                ob_start();
+                get_template_part('templates/emails/customer', 'subscription-update', array('new_order_url' => $new_order_url, 'order_data' => $order_data, 'product_title' => $product_title));
+                $email_body = ob_get_clean();
+                // @todo: dacă site-ul va fi bilingv, de memorat în contul utilizatorului preferința de limbă și de afișat subiectul respectiv limbii
+                $subject = 'A fost emisă o nouă factură proformă';
+                $headers = array(
+                    'Content-Type: text/html; charset=UTF-8',
+                    'Reply-To: ' . get_bloginfo('admin_email')
+                );
+
+                wp_mail(
+                    $order_data['user_email'],
+                    $subject,
+                    $email_body,
+                    $headers
+                );
+
             }else{
                 // @todo: de trimis email sau creat log cu eroarea la creare postare
             }
+
+
+
         }
     }
 }
