@@ -31,10 +31,8 @@ if(!$active_subscription){
         }else{ 
 
             $videolessons_videos = get_field('goicc_videolessons_videos');
-            if($videolessons_videos){
-                $duration = array_sum(array_column($videolessons_videos, 'goicc_videolessons_videos_duration'));
-            }
-
+            $duration = get_field('goicc_videolessons_duration');
+            
             $back_to_course = __('Back to Course','goicc');
 
             $related_videolessons = get_posts( array(

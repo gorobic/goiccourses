@@ -666,6 +666,27 @@ acf_add_local_field_group(array(
 	'title' => 'Video lessons',
 	'fields' => array(
 		array(
+			'key' => 'field_5fc9135878768',
+			'label' => 'Duration',
+			'name' => 'goicc_videolessons_duration',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => 'in seconds',
+			'prepend' => '',
+			'append' => '',
+			'min' => '',
+			'max' => '',
+			'step' => '',
+		),
+		array(
 			'key' => 'field_5fc900d062c45',
 			'label' => 'Videos',
 			'name' => 'goicc_videolessons_videos',

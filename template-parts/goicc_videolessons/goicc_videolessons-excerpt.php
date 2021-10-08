@@ -14,7 +14,7 @@
     // if($videolessons_videos){
     //     $duration = array_sum(array_column($videolessons_videos, 'goicc_videolessons_videos_duration'));
     // }
-    
+    $duration = get_field('goicc_videolessons_duration');
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <div class="row align-items-center">
