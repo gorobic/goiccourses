@@ -50,9 +50,10 @@
                                     
                                     <?php 
                                     $featured_video_id = get_field('goicc_courses_featured_video_id'); 
-                                    if($featured_video_id){ 
+                                    $preview_video_id = get_field('goicc_courses_preview_video_id'); 
+                                    if($preview_video_id){ 
                                     ?>
-                                        <a href="https://player.vimeo.com/video/<?php echo $featured_video_id; ?>?autoplay=1&loop=1&autopause=0&byline=0&title=0" class="btn text-light font-weight-light btn-lg" data-fancybox>
+                                        <a href="https://player.vimeo.com/video/<?php echo $preview_video_id; ?>?autoplay=1&loop=1&autopause=0&byline=0&title=0" class="btn text-light font-weight-light btn-lg" data-fancybox>
                                             <span class="goicicons-play-square mr-2"></span> <?php _e('Preview','goicc'); ?>
                                         </a>
                                     <?php } ?>
