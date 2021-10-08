@@ -129,23 +129,17 @@ if(!$active_subscription){
                                         <?php } ?>
                                     </div>
                                     
-                                    <?php //if( '' !== get_post()->post_content ) { ?>
+                                    <?php if( '' !== get_post()->post_content ) { ?>
 
                                         <div class="entry mt-2">
-                                            <?php
-                                            $the_content = apply_filters('the_content', get_the_content());
-                                            if ( !empty($the_content) ) {
-                                            ?>
                                             <div class="h4">
                                                 <?php _e('Chapter details','goicc'); ?>
                                             </div>
                                             <?php
 
                                             the_content();
-                                            }
-                                            /* <div class="h4">
-                                                <?php _e('Chapter details','goicc'); ?>
-                                            </div> */ ?>
+                                            
+                                            ?>
 
                                             <?php /*
                                             $course_post = get_post($course_id);
@@ -162,7 +156,7 @@ if(!$active_subscription){
                                             } */ ?>
                                         </div>
 
-                                    <?php //} ?>
+                                    <?php } ?>
                                 </div>
                                 <?php if($references){ ?>
                                     <div id="references" class="tab-pane fade" role="tabpanel" aria-labelledby="references-tab">
