@@ -18,7 +18,7 @@ $meta = get_post_meta(get_the_ID());
                 <div class="text-center h5 mb-3">
                     <?php echo $meta['goicc_display_title'][0]; ?>
                 </div>
-                <div>
+                <div class="text-muted">
                     <?php the_content(); ?>
                 </div>
             </div>
