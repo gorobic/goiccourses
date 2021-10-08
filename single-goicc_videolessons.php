@@ -132,11 +132,22 @@ if(!$active_subscription){
                                     <?php //if( '' !== get_post()->post_content ) { ?>
 
                                         <div class="entry mt-2">
-                                            <?php /* <div class="h4">
+                                            <?php
+                                            $the_content = apply_filters('the_content', get_the_content());
+                                            if ( !empty($the_content) ) {
+                                            ?>
+                                            <div class="h4">
+                                                <?php _e('Chapter details','goicc'); ?>
+                                            </div>
+                                            <?php
+
+                                            the_content();
+                                            }
+                                            /* <div class="h4">
                                                 <?php _e('Chapter details','goicc'); ?>
                                             </div> */ ?>
 
-                                            <?php 
+                                            <?php /*
                                             $course_post = get_post($course_id);
                                             $course_content = $course_post->post_content;
                                             if($course_content){
@@ -144,12 +155,11 @@ if(!$active_subscription){
                                                 $course_content = str_replace(']]>', ']]&gt;', $course_content);
                                                 ?>
                                                 <div class="h4">
-                                                    <?php _e('Course description','goicc'); ?>
+                                                    <?php _e('Description','goicc'); ?>
                                                 </div> 
                                                 <?php
                                                 echo $course_content;
-                                            }
-                                            // the_content(); ?>
+                                            } */ ?>
                                         </div>
 
                                     <?php //} ?>
