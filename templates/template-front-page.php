@@ -33,7 +33,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div>
-                                <a href="https://player.vimeo.com/video/591019853?autoplay=1&loop=1&autopause=0&byline=0&title=0" class="btn text-light rounded-0" data-fancybox>
+                                <a href="https://player.vimeo.com/video/625541855?autoplay=1&loop=1&autopause=0&byline=0&title=0" class="btn text-light rounded-0" data-fancybox>
                                     <?php _e('PRIVEȘTE PROMO', 'goicc'); ?>
                                 </a>
                             </div>
