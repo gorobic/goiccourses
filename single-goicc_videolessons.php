@@ -68,7 +68,7 @@ if(!$active_subscription){
                         <div class="bg-img bg-cover lazy" data-src="<?php if($post_thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large')){ echo $post_thumbnail; } ?>">
                             <div class="row no-gutters">
                                 <div class="col-md-8 col-lg-6 col-xl-5">
-                                    <div class="py-5 py-md-4 px-4 my-md-6 videolessons-play-course-box videolessons-play-first-video">
+                                    <div class="py-5 py-md-4 py-xl-5 px-4 px-xl-5 my-md-6 videolessons-play-course-box videolessons-play-first-video">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
                                                 <span class="font-weight-light h4">

@@ -1,10 +1,11 @@
 <?php 
     global $i, $active_subscription;
-    if($i || $i === 0){
-        $post_title = $i+1 . '. ' . get_the_title();
-    }else{
-        $post_title = get_the_title();
-    }
+    // if($i || $i === 0){
+    //     $post_title = $i+1 . '. ' . get_the_title();
+    // }else{
+    //     $post_title = get_the_title();
+    // }
+    $post_title = get_the_title();
     if($active_subscription){
         $permalink = esc_url( get_permalink() );
     }else{

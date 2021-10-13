@@ -156,6 +156,13 @@ footer .footer-widgets ul.menu {
   padding: 0;
 }
 
+footer .footer-logos > svg {
+  max-height: 30px;
+  display: inline-block;
+  width: auto;
+  margin: 0 0.3rem;
+}
+
 /* //////// */
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575px) {

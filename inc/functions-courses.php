@@ -28,12 +28,13 @@ function chapters_number_format($c = 0){
 
 function chapters_navigation($i = 0, $id = 0, $prev = false){
     if($id){
-        if($prev){
-            $number_in_title = $i;
-        }else{
-            $number_in_title = $i+2;
-        }
-        $title = $number_in_title . '. ' . get_the_title($id);
+        // if($prev){
+        //     $number_in_title = $i;
+        // }else{
+        //     $number_in_title = $i+2;
+        // }
+        // $title = $number_in_title . '. ' . get_the_title($id);
+        $title = get_the_title($id);
         ob_start();
     ?>
         <a href="<?php echo esc_url( get_the_permalink($id) ); ?>" title="<?php echo $title; ?>" class="small text-muted">
