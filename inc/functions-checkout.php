@@ -38,7 +38,7 @@ function send_checkout_form() {
         );
 
         wp_mail(
-            $_POST['user_email'],
+            get_userdata($_POST['user_id'])->user_email,
             $subject,
             $email_body,
             $headers
