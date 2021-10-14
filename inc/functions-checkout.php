@@ -26,6 +26,23 @@ function send_checkout_form() {
 
         $return = apply_filters( 'goicc_send_checkout_form', $return_data, $_POST['payment_method'], $order, CHECKOUT_PAGE_PERMALINK, $user_id );
 
+        $account_page = accout_page_url();
+        ob_start();
+        get_template_part('templates/emails/order', 'submit', array('order_id' => $order, 'account_page' => $account_page ));
+        $email_body = ob_get_clean();
+        // @todo: dacă site-ul va fi bilingv, de memorat în contul utilizatorului preferința de limbă și de afișat subiectul respectiv limbii
+        $subject = 'Vă mulțumim pentru achiziționarea serviciilor noastre';
+        $headers = array(
+            'Content-Type: text/html; charset=UTF-8',
+            'Reply-To: ' . get_bloginfo('admin_email')
+        );
+
+        wp_mail(
+            $_POST['user_email'],
+            $subject,
+            $email_body,
+            $headers
+        );
         // @todo: de trimis email că înscrierea s-a efectuat cu succes doar dacă s-a efectuat 
           
     }else{
