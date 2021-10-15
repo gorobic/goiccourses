@@ -4,13 +4,13 @@ const $checkoutFormSubmit = document.querySelector("#checkout-form #submit");
 const $formSubmitSpinner = document.querySelector("#form_submit_spinner");
 
 if ($checkoutFormDummy) {
-	$checkoutFormDummy.addEventListener("submit", e => {
+	$checkoutFormDummy.addEventListener("submit", (e) => {
 		e.preventDefault();
 	});
 }
 
 if ($checkoutForm) {
-	$checkoutForm.addEventListener("submit", e => {
+	$checkoutForm.addEventListener("submit", (e) => {
 		e.preventDefault();
 		// console.log(e);
 		// console.log($checkoutForm.elements);
@@ -34,10 +34,10 @@ function sendData() {
 			//'Content-Type': 'application/json',
 			//'Content-Type': 'application/x-www-form-urlencoded'
 		},
-		body: FD
+		body: FD,
 	})
-		.then(resp => resp.json())
-		.then(data => {
+		.then((resp) => resp.json())
+		.then((data) => {
 			$infobox.style.display = "none";
 			$infobox.removeAttribute("class");
 			$checkoutFormSubmit.disabled = false;

@@ -42,9 +42,7 @@ function send_checkout_form() {
             $subject,
             $email_body,
             $headers
-        );
-        // @todo: de trimis email că înscrierea s-a efectuat cu succes doar dacă s-a efectuat 
-          
+        ); 
     }else{
         $return = array(
             'success' => false,
