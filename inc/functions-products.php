@@ -54,8 +54,6 @@ function render_price($regular_price = 0, $sale_price = 0){
     return ob_get_clean();
 }
 
-// @todo: de externalizat în plugin pentru fiecare product type funcțiile. sau în fișier separat.
-
 // Product type SUBSCRIPTION
 function get_subscription_start_end_date($user_id, $product_id, $product_meta){
     $subscription_months = $product_meta['goicc_subscription_months'][0];
@@ -113,6 +111,16 @@ function do_create_order_product_type_subscription($order_id, $user_id, $order_d
     update_field('goicc_subscription_start_date', date('Ymd', $dates['start_date']), $order_id);
     update_field('goicc_subscription_end_date', date('Ymd', $dates['end_date']), $order_id);
 } 
+
+add_action('updated_post_meta', 'check_order_status_change_to_completed', 0, 4);
+function check_order_status_change_to_completed($meta_id, $post_id, $meta_key, $meta_value) {
+    if( 'goicc_order_status' === $meta_key && 'completed' == $meta_value) {
+        $product_type = get_post_meta($post_id, 'goicc_product_type', true);
+        if($product_type == 'subscription'){
+            wp_mail( 'gorobic@gmail.com', 'Status completed', $meta_value );
+        }
+    }
+}
 
 //@todo: daca externalizez subscriptions in plugin, sa refac cronul in felul urmator: https://wp-kama.ru/function/wp_schedule_event
 
