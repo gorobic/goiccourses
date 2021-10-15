@@ -197,7 +197,7 @@ get_header(); ?>
                         <?php } ?>
                     </div>
                 <?php } ?>
-                <div class="form-check">
+                <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox" required value="" id="form-acceptance">
                     <label class="form-check-label" for="form-acceptance">
                         <?php echo sprintf(__('I Agree to <a href="%s" target="_blank" rel="nofollow">Terms and Conditions and Privacy Policy</a>', 'goicc'), get_privacy_policy_url()); ?>
