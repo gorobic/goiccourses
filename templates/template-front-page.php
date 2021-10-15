@@ -19,7 +19,7 @@ get_header(); ?>
         <div class="w-100">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-8">
+                    <div class="col-md-10 col-lg-8 col-xl-6">
                         <div class="text-center">
                             <h1>
                                 Curs Academic de Desen creat de Ana Munteanu
