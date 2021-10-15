@@ -117,7 +117,7 @@ get_header(); ?>
                     <input type="checkbox" name="is_company" value="1" id="is_company"
                         <?php if(is_user_logged_in() && get_the_author_meta( 'is_company', $user_id )){echo 'checked';}?> />
                     <label
-                        for="is_company"><?php _e("Persoană juridică", 'goicc'); get_the_author_meta( 'is_company', $user_id ); ?></label>
+                        for="is_company"><?php _e("Persoană juridică", 'goicc'); ?></label>
                 </p>
 
                 <div class="row">
@@ -205,7 +205,7 @@ get_header(); ?>
                 </div>
                 <?php if(is_user_logged_in() && !get_the_author_meta( 'newsletter_acceptance', $user_id )){ ?>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="newsletter_acceptance">
+                        <input class="form-check-input" type="checkbox" value="1" id="newsletter_acceptance" name="newsletter_acceptance">
                         <label class="form-check-label" for="newsletter_acceptance">
                             <?php echo _e("I Agree to receive emails with offers, discounts and other information", 'goicc'); ?>
                         </label>

@@ -56,7 +56,7 @@ function extra_user_profile_fields( $user ) {
             <input type="checkbox" name="newsletter_acceptance" id="newsletter_acceptance" value="1"
                 <?php if(get_the_author_meta( 'newsletter_acceptance', $user->ID )){echo 'checked';}?> />
             <label for="newsletter_acceptance"><?php _e("Yes", 'goicc'); ?></label><br />
-            <span class="description"><?php _e("I agree to receive emails with offers, discounts and other information", "goicc"); ?></span>
+            <span class="description"><?php _e("I Agree to receive emails with offers, discounts and other information", "goicc"); ?></span>
         </td>
     </tr>
     <tr>

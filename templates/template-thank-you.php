@@ -36,6 +36,7 @@ get_header(); ?>
             if($payment_method === 'bank_transfer'){
                 $desc = _x( 'Please make the bank transfer to the account indicated in the proforma invoice below. In the Payment Details field, enter the ID or proforma invoice number', 'Thank You Page', 'goicc' );
             };
+            break;
         default:
             $title = _x( 'Payment is being processed', 'Thank You Page', 'goicc' );
             $desc = _x( '', 'Thank You Page', 'goicc' );
