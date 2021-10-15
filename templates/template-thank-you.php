@@ -15,6 +15,7 @@ get_header(); ?>
 <?php if($order_id = check_order($_GET['order_id'])){ ?>
 
     <?php 
+    $payment_method = get_post_meta($order_id, 'goicc_payment_method', true);
     $payment_status = get_post_meta($order_id, 'goicc_order_status', true);
     switch ($payment_status) {
         case 'completed':
@@ -30,6 +31,11 @@ get_header(); ?>
             break;
         case 'pending':
         case 'on-hold':
+            $title = _x( 'Payment is being processed', 'Thank You Page', 'goicc' );
+            $desc = _x( '', 'Thank You Page', 'goicc' );
+            if($payment_method === 'bank_transfer'){
+                $desc = _x( 'Please make the bank transfer to the account indicated in the proforma invoice below. In the Payment Details field, enter the ID or proforma invoice number', 'Thank You Page', 'goicc' );
+            };
         default:
             $title = _x( 'Payment is being processed', 'Thank You Page', 'goicc' );
             $desc = _x( '', 'Thank You Page', 'goicc' );
