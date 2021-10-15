@@ -53,7 +53,7 @@ if(!$active_subscription){
             
             </div>
 
-            <div class="bg-gray-800 text-light border-top border-gray-900">
+            <div class="bg-gray-900 text-light border-top border-gray-900">
                 <div class="container">
                     <a href="<?php echo esc_url( get_permalink($course_id) ); ?>" class="text-gray-600 small font-weight-light" title="<?php echo $back_to_course; ?>">
                         « <?php echo $back_to_course; ?>
@@ -70,7 +70,7 @@ if(!$active_subscription){
                                 <div class="col-md-8 col-lg-6 col-xl-5">
                                     <div class="py-5 py-md-4 py-xl-5 px-4 px-xl-5 my-md-6 videolessons-play-course-box videolessons-play-first-video">
                                         <div class="row no-gutters align-items-center">
-                                            <div class="col-auto">
+                                            <div class="col-auto mx-auto mx-md-0">
                                                 <span class="font-weight-light h4">
                                                     <?php _e('Play first video lesson','goicc'); ?>
                                                 </span>
@@ -95,7 +95,7 @@ if(!$active_subscription){
                 
                 <div class="row">
                     
-                    <div class="col-md-8 col-xl-9">
+                    <div class="col-md-8 col-xl-8">
 
                         <div class="chapter-tabs">
                             <ul class="nav nav-tabs" id="chapter-tabs" role="tablist">
@@ -111,6 +111,11 @@ if(!$active_subscription){
                                         </a>
                                     </li>
                                 <?php } ?>
+                                <li class="nav-item d-block d-md-none">
+                                    <a class="nav-link" id="videolessons-videos-tab" href="#videolessons-videos" aria-controls="videolessons list" aria-selected="false">
+                                        <?php _e('Videos','goicc'); ?>
+                                    </a>
+                                </li>
                                 <?php /*if($homework){ ?>
                                     <li class="nav-item">
                                         <a class="nav-link" id="homework-tab" data-toggle="tab" href="#homework" role="tab" aria-controls="homework" aria-selected="false">
@@ -188,7 +193,7 @@ if(!$active_subscription){
                             </div>
                         </div>                        
                     </div>
-                    <div class="order-md-first col-md-4 col-xl-3">
+                    <div class="order-md-first col-md-4 col-xl-4">
                         <?php if($videos){ ?>
                             <div class="nav videolessons-videos d-block" id="videolessons-videos">
                                 <?php foreach($videos as $index => $video){ $tab_nr = $index+1; ?>

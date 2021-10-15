@@ -22,7 +22,7 @@ get_header(); ?>
                     <div class="col-md-10 col-lg-8">
                         <div class="text-center">
                             <h1>
-                                Cursul tău Academic de Desen propus de Ana Munteanu
+                                Curs Academic de Desen creat de Ana Munteanu
                             </h1>
                             <div class="h4 mb-4 mb-lg-5">
                                 Un studiu complet al desenului acasă
@@ -49,7 +49,7 @@ get_header(); ?>
     <div class="row">
         <div class="col-lg-7 pr-lg-5 mb-5">
             <h4 class="mb-4">
-                80 de ore de video și poze de referință
+                80 de ore de video și sute de poze de referință
             </h4>
 
             <?php 
