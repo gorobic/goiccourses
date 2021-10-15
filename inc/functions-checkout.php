@@ -16,7 +16,7 @@ function send_checkout_form() {
         // $checkout_page_permalink = get_the_permalink( $checkout_page_id );
         // global $checkout_page_permalink;
 
-        $redirect_permalink = CHECKOUT_PAGE_PERMALINK . '?status=success&order_id=' . $order['order_id'] . '-' . $order['order_unique_id'];
+        $redirect_permalink = CHECKOUT_PAGE_PERMALINK . '?status=success&orderId=' . $order['order_id'] . '-' . $order['order_unique_id'];
         $return_data = array(
             'content' => $redirect_permalink,
             'method' => 'GET', // GET or POST 

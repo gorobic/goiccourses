@@ -7,11 +7,9 @@ if ( isset($_GET) && isset($_GET['status']) ){
     global $thankyou_page_permalink;
 
     do_action('goicc_after_submit_return');
-    if($_GET['status'] === 'success'){
-        var_dump($_POST);
-    }
-    if($_GET['status'] === 'success' && isset($_GET['order_id']) ){
-        $destination = get_ty_page_url($_GET['order_id']);
+
+    if($_GET['status'] === 'success' && isset($_GET['orderId']) ){
+        $destination = get_ty_page_url($_GET['orderId']);
         header('Location: '.$destination);
     }
     die();

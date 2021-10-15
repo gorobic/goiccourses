@@ -24,10 +24,10 @@ function goicc_get_payment_statuses() {
 
 function goicc_get_payment_method() {
     $payment_method = array(
-        'cod'   => [
-            'title' => _x( 'Plata la sediu', 'Payment method', 'goicc' ),
-            'desc' => _x( 'Lorem ipsum dolor sit amet.', 'Payment method description', 'goicc' ),
-        ],
+        // 'cod'   => [
+        //     'title' => _x( 'Plata la sediu', 'Payment method', 'goicc' ),
+        //     'desc' => _x( 'Lorem ipsum dolor sit amet.', 'Payment method description', 'goicc' ),
+        // ],
         'bank_transfer'   => [
             'title' => _x( 'Bank transfer', 'Payment method', 'goicc' ),
             'desc' => _x( 'On the next page you will see the bank details on which you are asked to make the transfer.', 'Payment method description', 'goicc' ),
