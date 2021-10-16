@@ -166,7 +166,7 @@ function action_save_order( $post_id, $post, $update ) {
                 );
 
                 wp_mail(
-                    get_userdata($_POST['user_id'])->user_email,
+                    get_userdata($user_id)->user_email,
                     $subject,
                     $email_body,
                     $headers
