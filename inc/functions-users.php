@@ -215,7 +215,7 @@ function user_account_current_tab(){
     return $current_tab;
 }
 
-function get_subscription_data($user_id, $course_id){
+function get_subscription_data($user_id, $course_id, $current_id = false){
 
     if(!$user_id)
     return ['active' => false];
@@ -276,6 +276,8 @@ function get_subscription_data($user_id, $course_id){
         ),
     );
 
+    if($current_id){ $args['post__not_in'] = array($current_id); };
+
     // Check FUTURE subscription
     $args_future = array(
         'nopaging' => true,
@@ -308,6 +310,8 @@ function get_subscription_data($user_id, $course_id){
             ),
         ),
     );
+
+    if($current_id){ $args_future['post__not_in'] = array($current_id); };
 
     date_default_timezone_set('UTC');
 

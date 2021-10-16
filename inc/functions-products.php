@@ -55,7 +55,7 @@ function render_price($regular_price = 0, $sale_price = 0){
 }
 
 // Product type SUBSCRIPTION
-function get_subscription_start_end_date($user_id, $product_id, $product_meta){
+function get_subscription_start_end_date($user_id, $product_id, $product_meta, $current_id = false){
     $subscription_months = $product_meta['goicc_subscription_months'][0];
 
     $connected_course = get_posts( array(
@@ -66,7 +66,7 @@ function get_subscription_start_end_date($user_id, $product_id, $product_meta){
         'fields' => 'ids'
     ) )[0];
 
-    $subscription_data = get_subscription_data($user_id, $connected_course);
+    $subscription_data = get_subscription_data($user_id, $connected_course, $current_id);
     
     if($subscription_data['active']){
         $start_date = strtotime($subscription_data['active_end'] . ' + 1 day');
@@ -112,15 +112,70 @@ function do_create_order_product_type_subscription($order_id, $user_id, $order_d
     update_field('goicc_subscription_end_date', date('Ymd', $dates['end_date']), $order_id);
 } 
 
-add_action('updated_post_meta', 'check_order_status_change_to_completed', 0, 4);
-function check_order_status_change_to_completed($meta_id, $post_id, $meta_key, $meta_value) {
-    if( 'goicc_order_status' === $meta_key && 'completed' == $meta_value) {
-        $product_type = get_post_meta($post_id, 'goicc_product_type', true);
-        if($product_type == 'subscription'){
-            wp_mail( 'gorobic@gmail.com', 'Status completed', $meta_value );
+// add_action('updated_post_meta', 'check_order_status_change_to_completed', 0, 4);
+// function check_order_status_change_to_completed($meta_id, $post_id, $meta_key, $meta_value) {
+//     if( 'goicc_order_status' === $meta_key && 'completed' == $meta_value) {
+//         $product_type = get_post_meta($post_id, 'goicc_product_type', true);
+//         if($product_type == 'subscription'){
+
+//             $user_id = get_post_field( 'post_author', $post_id );
+//             $product_id = get_post_meta($post_id, 'goicc_order_product_id', true);
+//             $product_meta = get_post_meta($product_id);
+
+//             $dates = get_subscription_start_end_date($user_id, $product_id, $product_meta, $post_id);
+
+//             // @todo: update-urile de mai jos nu functinoeaza. cred ca postarea se updateaza dupa ce introduc aceste campuri.
+//             update_field('goicc_subscription_start_date', date('Ymd', $dates['start_date']), $post_id);
+//             update_field('goicc_subscription_end_date', date('Ymd', $dates['end_date']), $post_id);
+//             update_post_meta(632, 'goicc_subscription_months', 55);
+            
+//             wp_mail( 'gorobic@gmail.com', 'Status completed', json_encode($dates) );
+//         }
+//     }
+// }
+
+function action_save_order( $post_id, $post, $update ) { 
+    if( !$update ) return;
+    if( 'goicc_order' !== $post->post_type ) return;
+
+    $order_update_and_send_email = get_post_meta($post_id, 'goicc_order_update_and_send_email', true);
+    if($order_update_and_send_email){
+        $order_status = get_post_meta($post_id, 'goicc_order_status', true);
+        if( 'completed' == $order_status ){
+            $product_type = get_post_meta($post_id, 'goicc_product_type', true);
+            if($product_type == 'subscription'){
+
+                $user_id = get_post_field( 'post_author', $post_id );
+                $product_id = get_post_meta($post_id, 'goicc_order_product_id', true);
+                $product_meta = get_post_meta($product_id);
+
+                $dates = get_subscription_start_end_date($user_id, $product_id, $product_meta, $post_id);
+
+                update_field('goicc_subscription_start_date', date('Ymd', $dates['start_date']), $post_id);
+                update_field('goicc_subscription_end_date', date('Ymd', $dates['end_date']), $post_id);
+                update_field('goicc_order_update_and_send_email', 0, $post_id);
+                
+                ob_start();
+                get_template_part('templates/emails/order', 'completed-subscription', array('order_id' => $post_id, 'product_id' => $product_id, 'product_meta' => $product_meta));
+                $email_body = ob_get_clean();
+                // @todo: dacă site-ul va fi bilingv, de memorat în contul utilizatorului preferința de limbă și de afișat subiectul respectiv limbii
+                $subject = 'Ați primit acces la curs';
+                $headers = array(
+                    'Content-Type: text/html; charset=UTF-8',
+                    'Reply-To: ' . get_bloginfo('admin_email')
+                );
+
+                wp_mail(
+                    get_userdata($_POST['user_id'])->user_email,
+                    $subject,
+                    $email_body,
+                    $headers
+                ); 
+            }
         }
     }
-}
+}; 
+add_action( 'save_post', 'action_save_order', 10, 3 ); 
 
 //@todo: daca externalizez subscriptions in plugin, sa refac cronul in felul urmator: https://wp-kama.ru/function/wp_schedule_event
 
