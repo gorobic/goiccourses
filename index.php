@@ -18,7 +18,7 @@
         <?php } else { ?>
 
         <p>
-            <?php _e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'text_domain'); ?>
+            <?php _e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'goicc'); ?>
         </p>
         <?php get_search_form(); ?>
 

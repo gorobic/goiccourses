@@ -123,7 +123,7 @@ get_header(); ?>
 
                     <div id="question-collapse-1" class="collapse show" aria-labelledby="question-heading-1" data-parent="#accordion-front-page">
                     <div class="card-body">
-                    Pentru a începe cursul apasă oricare din butoanele cu titlul începe cursul. Vei fi redirecționat spre căsuța care te va ajuta să selectezi o opțiune de plată și să creezi un cont personal pe care pe care îl poți accesa de fiecare dată când vrei să privești lecțiile.
+                    Pentru a începe cursul apasă oricare din butoanele cu titlul începe cursul. Vei fi redirecționat spre căsuța care te va ajuta să selectezi o opțiune de plată și să creezi un cont personal pe care îl poți accesa de fiecare dată când vrei să privești lecțiile.
                     </div>
                     </div>
                 </div>

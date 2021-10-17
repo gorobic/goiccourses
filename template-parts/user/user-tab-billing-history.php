@@ -117,7 +117,7 @@ if(isset($order_details) && $order_details){
                             $query_string['order_id'] = $order_id . '-' . $order_meta['goicc_order_unique_id'][0];
                             $result_url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) . '?' . http_build_query($query_string);
                             ?>
-                            <a href="<?php echo $result_url; ?>" class="btn btn-sm btn-outline-primary">
+                            <a href="<?php echo $result_url; ?>" class="btn btn-sm btn-outline-primary m-1">
                                 <?php _e('View','goicc'); ?>
                             </a>
                             <?php do_action('goicc_billing_history_buttons', $order_id, $order_meta); ?>

@@ -13,7 +13,7 @@ if ( ! function_exists( 'theme_setup' ) ) {
          * Make theme available for translation.
          * Translations can be placed in the /languages/ directory.
          */
-        load_theme_textdomain( 'text_domain', get_template_directory() . '/languages' );
+        load_theme_textdomain( 'goicc', get_template_directory() . '/languages' );
      
         /**
          * Add default posts and comments RSS feed links to <head>.
@@ -34,8 +34,8 @@ if ( ! function_exists( 'theme_setup' ) ) {
          * Add support for two custom navigation menus.
          */
         register_nav_menus( array(
-            'primary'   => __( 'Primary Menu', 'text_domain' ),
-            'secondary' => __('Secondary Menu', 'text_domain' )
+            'primary'   => __( 'Primary Menu', 'goicc' ),
+            'secondary' => __('Secondary Menu', 'goicc' )
         ) );
      
         /**
@@ -124,9 +124,9 @@ function goicc_sanitize_dropdown_pages( $page_id, $setting ) {
 function widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Footer widgets 1', 'text_domain' ),
+			'name'          => __( 'Footer widgets 1', 'goicc' ),
 			'id'            => 'footer-widgets-1', 
-			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'text_domain' ),
+			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'goicc' ),
 			'before_widget' => '<section id="%1$s" class="widget mb-4 %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<div class="widget-title h4 font-weight-light text-light">',
@@ -135,9 +135,9 @@ function widgets_init() {
     );
     register_sidebar(
 		array(
-			'name'          => __( 'Footer widgets 2', 'text_domain' ),
+			'name'          => __( 'Footer widgets 2', 'goicc' ),
 			'id'            => 'footer-widgets-2', 
-			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'text_domain' ),
+			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'goicc' ),
 			'before_widget' => '<section id="%1$s" class="widget mb-4 %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<div class="widget-title h4 font-weight-light text-light">',
@@ -146,9 +146,9 @@ function widgets_init() {
     );
     register_sidebar(
 		array(
-			'name'          => __( 'Footer widgets 3', 'text_domain' ),
+			'name'          => __( 'Footer widgets 3', 'goicc' ),
 			'id'            => 'footer-widgets-3', 
-			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'text_domain' ),
+			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'goicc' ),
 			'before_widget' => '<section id="%1$s" class="widget mb-4 %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<div class="widget-title h4 font-weight-light text-light">',
@@ -157,9 +157,9 @@ function widgets_init() {
     );
     register_sidebar(
 		array(
-			'name'          => __( 'Footer widgets 4', 'text_domain' ),
+			'name'          => __( 'Footer widgets 4', 'goicc' ),
 			'id'            => 'footer-widgets-4', 
-			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'text_domain' ),
+			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'goicc' ),
 			'before_widget' => '<section id="%1$s" class="widget mb-4 %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<div class="widget-title h4 font-weight-light text-light">',

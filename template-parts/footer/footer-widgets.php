@@ -2,7 +2,7 @@
 <div class="bg-dark text-light footer-widgets overflow-hidden">
     <div class="container mt-5 mb-4">
         <aside class="widget-area row" role="complementary"
-            aria-label="<?php esc_attr_e( 'Footer', 'text_domain' ); ?>">
+            aria-label="<?php esc_attr_e( 'Footer', 'goicc' ); ?>">
             <div class="col-sm-6 col-lg-3">
                 <?php if ( is_active_sidebar( 'footer-widgets-1' )){
                     dynamic_sidebar( 'footer-widgets-1' ); 

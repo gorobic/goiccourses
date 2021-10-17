@@ -3,10 +3,10 @@
 <header class="entry-header">
     <?php if ( have_posts() ){ ?>
     <h1 class="title">
-        <?php printf( __( 'Search Results for: %s', 'text_domain' ), '<span>' . get_search_query() . '</span>' ); ?>
+        <?php printf( __( 'Search Results for: %s', 'goicc' ), '<span>' . get_search_query() . '</span>' ); ?>
     </h1>
     <?php }else{ ?>
-    <h1 class="title"><?php _e( 'Nothing Found', 'text_domain' ); ?></h1>
+    <h1 class="title"><?php _e( 'Nothing Found', 'goicc' ); ?></h1>
     <?php } ?>
 </header>
 <div id="primary" class="content-area">
@@ -26,17 +26,17 @@
                 
             if ($wp_query->max_num_pages > 1) {?>
             <div class="alignleft">
-                <?php next_posts_link( __( '<span>&laquo;</span> Older posts', 'text_domain' ) );?>
+                <?php next_posts_link( __( '<span>&laquo;</span> Older posts', 'goicc' ) );?>
             </div>
             <div class="alignright">
-                <?php previous_posts_link( __( 'Newer posts <span>&raquo;</span>', 'text_domain' ) );?>
+                <?php previous_posts_link( __( 'Newer posts <span>&raquo;</span>', 'goicc' ) );?>
             </div>
             <?php } ?>
         </div>
         <?php } else { ?>
 
         <p>
-            <?php _e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'text_domain'); ?>
+            <?php _e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'goicc'); ?>
         </p>
         <?php get_search_form(); ?>
 
