@@ -13,7 +13,7 @@
 
 
     <?php 
-        $args = array(
+        /*$args = array(
             'nopaging' => true,
             'suppress_filters' => false,
             'post_status' => 'publish',
@@ -107,11 +107,8 @@
                 }else{
                     // @todo: de trimis email sau creat log cu eroarea la creare postare
                 }
-
-
-
             }
-        }
+        }*/
     ?>
 
     </body>

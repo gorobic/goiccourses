@@ -883,7 +883,22 @@ function my_custom_columns($column){
     
     if ($column === 'goicc_order_status') {
 		$field_obj = get_field_object( "goicc_order_status", $post->ID );
-		echo $field_obj['choices'][ $field_obj['value'] ];
+		switch ($field_obj['value']) {
+			case 'completed':
+				$color = '#00a32a';
+				break;
+			case 'cancelled':
+			case 'refunded':
+				$color = '#d63638';
+				break;
+			case 'failed':
+				$color = '#dba617';
+				break;
+			default:
+				$color = ''; // #72aee6 - info
+		}
+		
+		echo '<span style="color: ' . $color . '">' . $field_obj['choices'][ $field_obj['value'] ] . '</span>';
     }
     else {
          echo '';
