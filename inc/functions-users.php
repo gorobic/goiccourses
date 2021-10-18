@@ -53,6 +53,7 @@ function extra_user_profile_fields( $user ) {
     <tr>
         <th><label for="newsletter_acceptance"><?php _e("Newsletter acceptance", 'goicc'); ?></label></th>
         <td>
+            <input type="hidden" name="newsletter_acceptance" value="0" />
             <input type="checkbox" name="newsletter_acceptance" id="newsletter_acceptance" value="1"
                 <?php if(get_the_author_meta( 'newsletter_acceptance', $user->ID )){echo 'checked';}?> />
             <label for="newsletter_acceptance"><?php _e("Yes", 'goicc'); ?></label><br />
@@ -98,7 +99,9 @@ function save_extra_user_profile_fields( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id )  || !is_admin()) { 
         return false; 
     }
-    update_user_meta( $user_id, 'newsletter_acceptance', $_POST['newsletter_acceptance'] );
+    if(isset($_POST['newsletter_acceptance'])){
+        update_user_meta( $user_id, 'newsletter_acceptance', $_POST['newsletter_acceptance'] );
+    }
     update_user_meta( $user_id, 'is_company', $_POST['is_company'] );
     $user_extra_fields = goicc_get_user_extra_fields();
     foreach($user_extra_fields as $field_types){
@@ -152,8 +155,10 @@ function validate_and_save_user_fields($data, $user_id, $user_password = false){
     if ( !empty( $data['url'] ) )
         wp_update_user( array( 'ID' => $user_id, 'user_url' => esc_url( $data['url'] ) ) );
     
-    $newsletter_acceptance = ($data['newsletter_acceptance']) ? 1 : 0;
-    update_user_meta( $user_id, 'newsletter_acceptance', $newsletter_acceptance );
+    // if(isset($data['newsletter_acceptance'])){
+    //     $newsletter_acceptance = ($data['newsletter_acceptance']) ? 1 : 0;
+    //     update_user_meta( $user_id, 'newsletter_acceptance', $newsletter_acceptance );
+    // }
     $is_company = ($data['is_company']) ? 1 : 0;
     update_user_meta( $user_id, 'is_company', $is_company );
 
