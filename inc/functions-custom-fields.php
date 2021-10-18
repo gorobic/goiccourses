@@ -874,15 +874,15 @@ endif;
 
 
 function my_page_columns($columns){
-    $columns['goicc_payment_status'] = 'Payment status';
+    $columns['goicc_order_status'] = 'Order status';
     return $columns;
 }
 
 function my_custom_columns($column){
     global $post;
     
-    if ($column === 'goicc_payment_status') {
-		$field_obj = get_field_object( "goicc_payment_status", $post->ID );
+    if ($column === 'goicc_order_status') {
+		$field_obj = get_field_object( "goicc_order_status", $post->ID );
 		echo $field_obj['choices'][ $field_obj['value'] ];
     }
     else {

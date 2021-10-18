@@ -205,6 +205,7 @@ get_header(); ?>
                 </div>
                 <?php if(is_user_logged_in() && !get_the_author_meta( 'newsletter_acceptance', $user_id )){ ?>
                     <div class="form-check mb-3">
+                        <input type="hidden" name="newsletter_acceptance" value="0" />
                         <input class="form-check-input" type="checkbox" value="1" id="newsletter_acceptance" name="newsletter_acceptance">
                         <label class="form-check-label" for="newsletter_acceptance">
                             <?php echo _e("I Agree to receive emails with offers, discounts and other information", 'goicc'); ?>
