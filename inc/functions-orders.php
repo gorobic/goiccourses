@@ -45,7 +45,7 @@ function generate_invoice($order_id, $order_meta){
             ],
             'headquarters' => [
                 'l' => __('Sediu social', 'goicc'),
-                'v' => 'București, Sector 2, str. Lizeanu, nr. 29, et. 3',
+                'v' => 'București, Sector 3, str. Liviu Rebreanu, nr. 46-58, camera nr. 3, bloc Tronson V, et. 4, Ap. 42',
             ],
             'iban' => [
                 'l' => __('IBAN', 'goicc'),

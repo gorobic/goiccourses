@@ -159,7 +159,7 @@ function action_save_order( $post_id, $post, $update ) {
                 get_template_part('templates/emails/order', 'completed-subscription', array('order_id' => $post_id, 'product_id' => $product_id, 'product_meta' => $product_meta));
                 $email_body = ob_get_clean();
                 // @todo: dacă site-ul va fi bilingv, de memorat în contul utilizatorului preferința de limbă și de afișat subiectul respectiv limbii
-                $subject = 'Ați primit acces la curs';
+                $subject = 'Ai primit acces la curs';
                 $headers = array(
                     'Content-Type: text/html; charset=UTF-8',
                     'Reply-To: ' . get_bloginfo('admin_email')
@@ -268,7 +268,7 @@ function goicc_cron_subscription_update() {
                 get_template_part('templates/emails/customer', 'subscription-update', array('new_order_url' => $new_order_url, 'order_data' => $order_data, 'product_title' => $product_title));
                 $email_body = ob_get_clean();
                 // @todo: dacă site-ul va fi bilingv, de memorat în contul utilizatorului preferința de limbă și de afișat subiectul respectiv limbii
-                $subject = 'A fost emisă o nouă factură proformă';
+                $subject = 'Abonamentul actual expiră. A fost emisă o nouă factură proformă';
                 $headers = array(
                     'Content-Type: text/html; charset=UTF-8',
                     'Reply-To: ' . get_bloginfo('admin_email')

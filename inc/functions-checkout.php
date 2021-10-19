@@ -31,7 +31,8 @@ function send_checkout_form() {
         get_template_part('templates/emails/order', 'submit', array('order_id' => $order, 'account_page' => $account_page ));
         $email_body = ob_get_clean();
         // @todo: dacă site-ul va fi bilingv, de memorat în contul utilizatorului preferința de limbă și de afișat subiectul respectiv limbii
-        $subject = 'Vă mulțumim pentru achiziționarea serviciilor noastre';
+        // @todo: în funcție de tipul produsului, de modificat subiectul dar și exprimarea din email
+        $subject = 'Mulțumim pentru înscriere';
         $headers = array(
             'Content-Type: text/html; charset=UTF-8',
             'Reply-To: ' . get_bloginfo('admin_email')

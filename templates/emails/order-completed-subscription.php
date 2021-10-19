@@ -13,13 +13,16 @@ if($connected_courses){
 ?>
 
 <p>
-Ați primit acces la cursul "<strong><?php echo get_the_title($course_id); ?></strong>"
+    Ai primit acces la cursul "<strong><?php echo get_the_title($course_id); ?></strong>" de pe site-ul www.cursacademic.ro
 </p>
 <p>
-Accesați link-ul de mai jos pentru a începe cursul.
+    Urmează link-ul de mai jos pentru a accesa materialele de curs și pentru a începe procesul de învățare:
 </p>
 <p>
-<a href="<?php echo get_permalink($course_id); ?>">Vezi cursul</a>
+    <a href="<?php echo get_permalink($course_id); ?>">Vezi cursul</a>
+</p>
+<p>
+    De acum încolo atenția și străduința te vor ajuta să studiezi arta Desenului Academic!
 </p>
 
 <?php get_template_part('templates/emails/email', 'footer');
