@@ -94,7 +94,7 @@ get_header(); ?>
             Te poți consulta cu profesorul online!
         </h4>
         
-        Dacă vrei să prezinți profesorului temele realizate în timpul cursului o poți face pe grupul de <a href="#" target="_blank" rel="nofollow">Facebook</a> destinat celor care s-au înscris la curs. 
+        Dacă vrei să prezinți profesorului temele realizate în timpul cursului o poți face pe grupul de <a href="https://www.facebook.com/groups/273024921373794" target="_blank" rel="nofollow">Facebook</a> destinat celor care s-au înscris la curs. 
         <hr class="w-25">
         Aici Ana Munteanu poate oferi în fiecare joi comentarii legate de lucrările realizate de voi fie în categoria discuții fie prin mesaje.
         <hr class="w-25">
