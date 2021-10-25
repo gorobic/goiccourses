@@ -98,7 +98,7 @@ get_header(); ?>
         <hr class="w-25">
         Aici Ana Munteanu poate oferi în fiecare joi comentarii legate de lucrările realizate de voi fie în categoria discuții fie prin mesaje.
         <hr class="w-25">
-        Dacă nu folosești facebook poți scrie un email cu poza atașată la <a href="mailto:contact@cursacademic.ro" target="_blank" rel="nofollow">contact@cursacademic.ro</a>
+        Dacă nu folosești facebook poți scrie un email cu poza atașată la <a href="mailto:artist@cursacademic.ro" target="_blank" rel="nofollow">artist@cursacademic.ro</a>
         <hr class="w-25">
         De asemenea pe grup vor fi publicate noutăți și campanii legate de curs.
     </div>
@@ -220,7 +220,7 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <a href="/faq/" class="my-4 d-inline-block"><?php _e('Read more F.A.Q.','goicc'); ?> <span class="small"><span class="goicicons-arrow-light small"></span></span></a>
+                <a href="/intrebari-frecvente/" class="my-4 d-inline-block"><?php _e('Read more F.A.Q.','goicc'); ?> <span class="small"><span class="goicicons-arrow-light small"></span></span></a>
             </div>
         </div>
     </div>
