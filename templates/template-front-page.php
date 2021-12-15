@@ -272,8 +272,8 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <?php //echo do_shortcode('[course_product course=47]'); ?>
-        <?php echo do_shortcode('[course_product course=22]'); ?>
+        <?php echo do_shortcode('[course_product course=47]'); ?>
+        <?php //echo do_shortcode('[course_product course=22]'); ?>
     </div>
 </div>
 
