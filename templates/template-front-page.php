@@ -262,8 +262,18 @@ get_header(); ?>
             <div class="mb-4">
                 <?php _e('Subscribe to this course! Choose a period that is more convenient for you.','goicc'); ?>
             </div>
+            <div class="mb-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6">
+                        <div class="bg-danger text-light border border-danger px-4 py-3">
+                        Reduceri de sărbători în perioada <strong>19 - 29 decembrie 2021</strong>! Beneficiază de o perioadă mai mare de acces, la un preț redus!
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <?php echo do_shortcode('[course_product course=47]'); ?>
+        <?php //echo do_shortcode('[course_product course=47]'); ?>
+        <?php echo do_shortcode('[course_product course=22]'); ?>
     </div>
 </div>
 
