@@ -106,6 +106,7 @@
                             <div class="mb-4">
                                 <?php _e('Subscribe to this course! Choose a period that is more convenient for you.','goicc'); ?>
                             </div>
+                            <?php /*
                             <div class="mb-4">
                                 <div class="row justify-content-center">
                                     <div class="col-md-10 col-lg-6">
@@ -115,6 +116,7 @@
                                     </div>
                                 </div>
                             </div>
+                            */ ?>
                         </div>
                         <?php echo do_shortcode('[course_product course='. get_the_ID() .']'); ?>
                     </div>
