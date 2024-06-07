@@ -12331,16 +12331,16 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   width: 2.375rem;
-  width: calc( 2.25rem + 2px );
+  width: calc( 		2.25rem + 2px 	);
 }
 
 .btn-square.btn-sm, .btn-group-sm > .btn-square.btn {
   width: 1.9375rem;
-  width: calc( 1.8125rem + 2px );
+  width: calc( 		1.8125rem + 2px 	);
 }
 
 .btn-square.btn-lg, .btn-group-lg > .btn-square.btn {
   width: 3rem;
-  width: calc( 2.875rem + 2px );
+  width: calc( 		2.875rem + 2px 	);
 }
 /*# sourceMappingURL=main.css.map*/

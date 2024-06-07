@@ -52,6 +52,14 @@ html {
 	background: rgb(0, 0, 0, 0.6);
 }
 
+.courses-list .course-details {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	padding: 5px 10px 0 10px;
+}
+
 .navigation .thumbnail {
 	max-width: 100%;
 	width: 100px;

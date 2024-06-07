@@ -279,6 +279,20 @@ get_header(); ?>
     </div>
 </div>
 
+<div class="py-5" id="courses-list">
+    <div class="container">
+        <div class="text-center">
+            <div class="h2">
+                <?php _e('Choose one of the mini-courses','goicc'); ?>
+            </div>
+            <div class="mb-4">
+                Ți-am pus la dispoziție o listă de mini-cursuri care dau acces la câteva capitole din marele curs. Le poți parcurge când ți-e mai comod.
+            </div>
+        </div>
+        <?php echo do_shortcode('[courses ids="25, 22"]'); ?>
+    </div>
+</div>
+
 <div class="container">
 <? } 
 }else{ 
