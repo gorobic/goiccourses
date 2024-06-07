@@ -1,18 +1,20 @@
-        </div>
+        <?php if (!BUILT_WITH_ELEMENTOR) { ?>
+            </div>
+        <?php } ?>
 
-        
+
         <footer>
-        
-            <?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 
-            <?php get_template_part( 'template-parts/footer/site', 'info' ); ?>
+            <?php get_template_part('template-parts/footer/footer', 'widgets'); ?>
+
+            <?php get_template_part('template-parts/footer/site', 'info'); ?>
 
         </footer>
-    </div>
-    <?php wp_footer(); ?>
+        </div>
+        <?php wp_footer(); ?>
 
 
-    <?php 
+        <?php
         /*$args = array(
             'nopaging' => true,
             'suppress_filters' => false,
@@ -109,8 +111,8 @@
                 }
             }
         }*/
-    ?>
+        ?>
 
-    </body>
+        </body>
 
-    </html>
+        </html>

@@ -3,28 +3,28 @@ $secondary: #9e9e9e;
 $dark: #000000;
 
 $font-family-sans-serif: "Open Sans", sans-serif, -apple-system,
-	BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $headings-font-weight: 300;
 $theme-colors: (
-	//"primary": #5c1d0b,
-		"white": #fff,
-	"gray-100": #fefefe,
-	"gray-200": #e9ecef,
-	"gray-300": #dee2e6,
-	"gray-400": #ced4da,
-	"gray-500": #adb5bd,
-	"gray-600": #adb5bd,
-	"gray-700": #495057,
-	"gray-800": #343a40,
-	"gray-900": #212529,
-	"black": #000
+    //"primary": #5c1d0b,
+        "white": #fff,
+    "gray-100": #fefefe,
+    "gray-200": #e9ecef,
+    "gray-300": #dee2e6,
+    "gray-400": #ced4da,
+    "gray-500": #adb5bd,
+    "gray-600": #adb5bd,
+    "gray-700": #495057,
+    "gray-800": #343a40,
+    "gray-900": #212529,
+    "black": #000
 );
 
 // Add custom spacers to default
 $spacers: (
-	"6": 6rem,
-	"row": 15px,
+    "6": 6rem,
+    "row": 15px,
 );
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
@@ -33,134 +33,134 @@ $spacers: (
 
 .navbar-dark .dropdown-menu,
 .dropdown-menu.dropdown-dark {
-	color: $navbar-dark-color;
-	background-color: $dark;
-	border-color: rgba($white, 0.3);
+    color: $navbar-dark-color;
+    background-color: $dark;
+    border-color: rgba($white, 0.3);
 }
 
 .navbar-dark .dropdown-divider,
 .dropdown-dark .dropdown-divider {
-	border-top-color: rgba($white, 0.3);
+    border-top-color: rgba($white, 0.3);
 }
 
 .navbar-dark .dropdown-item,
 .dropdown-dark .dropdown-item {
-	color: $navbar-dark-color;
+    color: $navbar-dark-color;
 
-	&.active,
-	&:active {
-		color: $navbar-dark-active-color;
-		background-color: transparent;
-	}
+    &.active,
+    &:active {
+        color: $navbar-dark-active-color;
+        background-color: transparent;
+    }
 
-	&.hover,
-	&:hover {
-		background-color: rgba($white, 0.2);
-	}
+    &.hover,
+    &:hover {
+        background-color: rgba($white, 0.2);
+    }
 
-	&.focus,
-	&:focus {
-		background-color: rgba($white, 0.2);
-	}
+    &.focus,
+    &:focus {
+        background-color: rgba($white, 0.2);
+    }
 
-	&.disabled,
-	&:disabled {
-		color: $navbar-dark-disabled-color;
-	}
+    &.disabled,
+    &:disabled {
+        color: $navbar-dark-disabled-color;
+    }
 }
 
 // This variable affects the `.p-ar-*` classes. (means Padding Aspect Ratio)
 $aspect-ratio-sizes: () !default;
 $aspect-ratio-sizes: map-merge(
-	(
-		4x1: 25%,
-		3x1: 33.3333333%,
-		5x2: 40%,
-		2x1: 50%,
-		16x9: 56.25%,
-		5x3: 60%,
-		3x2: 66.6666667%,
-		4x3: 75%,
-		1x1: 100%,
-		3x4: 133.3333333%,
-		2x3: 150%,
-		3x5: 166.6666667%,
-		9x16: 177.7777778%,
-		1x2: 200%,
-		2x5: 250%,
-		1x3: 300%,
-		1x4: 400%,
-	),
-	$aspect-ratio-sizes
+    (
+        4x1: 25%,
+        3x1: 33.3333333%,
+        5x2: 40%,
+        2x1: 50%,
+        16x9: 56.25%,
+        5x3: 60%,
+        3x2: 66.6666667%,
+        4x3: 75%,
+        1x1: 100%,
+        3x4: 133.3333333%,
+        2x3: 150%,
+        3x5: 166.6666667%,
+        9x16: 177.7777778%,
+        1x2: 200%,
+        2x5: 250%,
+        1x3: 300%,
+        1x4: 400%,
+    ),
+    $aspect-ratio-sizes
 );
 
 .bg-cover {
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .bg-contain {
-	-webkit-background-size: contain;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .bg-img {
-	display: block;
+    display: block;
 }
 
 .bg-img:before {
-	content: "";
-	position: relative;
-	display: block;
+    content: "";
+    position: relative;
+    display: block;
 }
 
 @each $key, $value in $aspect-ratio-sizes {
-	.p-ar-#{$key} {
-		&:before {
-			padding-top: $value;
-		}
-	}
+    .p-ar-#{$key} {
+        &:before {
+            padding-top: $value;
+        }
+    }
 }
 
 // Square buttons. For circle button add class .rounded-circle
 .btn-square {
-	white-space: nowrap;
-	padding-left: 0;
-	padding-right: 0;
-	width: (
-		$btn-font-size * $btn-line-height + $btn-padding-y * 2 + 0.125rem
-	); // if browser don't know about css calc() && 1rem = 16 px && $btn-border-width = 1px
-	width: calc(
-		#{($btn-font-size * $btn-line-height + $btn-padding-y * 2)} + #{(
-				$btn-border-width * 2
-			)}
-	);
+    white-space: nowrap;
+    padding-left: 0;
+    padding-right: 0;
+    width: (
+        $btn-font-size * $btn-line-height + $btn-padding-y * 2 + 0.125rem
+    ); // if browser don't know about css calc() && 1rem = 16 px && $btn-border-width = 1px
+    width: calc(
+        #{($btn-font-size * $btn-line-height + $btn-padding-y * 2)} + #{(
+                $btn-border-width * 2
+            )}
+    );
 }
 
 .btn-square.btn-sm {
-	width: (
-		$btn-font-size-sm * $btn-line-height-sm + $btn-padding-y-sm * 2 +
-			0.125rem
-	); // if browser don't know about css calc() && 1rem = 16 px && $btn-border-width = 1px
-	width: calc(
-		#{($btn-font-size-sm * $btn-line-height-sm + $btn-padding-y-sm * 2)} + #{(
-				$btn-border-width * 2
-			)}
-	);
+    width: (
+        $btn-font-size-sm * $btn-line-height-sm + $btn-padding-y-sm * 2 +
+            0.125rem
+    ); // if browser don't know about css calc() && 1rem = 16 px && $btn-border-width = 1px
+    width: calc(
+        #{($btn-font-size-sm * $btn-line-height-sm + $btn-padding-y-sm * 2)} + #{(
+                $btn-border-width * 2
+            )}
+    );
 }
 
 .btn-square.btn-lg {
-	width: (
-		$btn-font-size-lg * $btn-line-height-lg + $btn-padding-y-lg * 2 +
-			0.125rem
-	); // if browser don't know about css calc() && 1rem = 16 px && $btn-border-width = 1px
-	width: calc(
-		#{($btn-font-size-lg * $btn-line-height-lg + $btn-padding-y-lg * 2)} + #{(
-				$btn-border-width * 2
-			)}
-	);
+    width: (
+        $btn-font-size-lg * $btn-line-height-lg + $btn-padding-y-lg * 2 +
+            0.125rem
+    ); // if browser don't know about css calc() && 1rem = 16 px && $btn-border-width = 1px
+    width: calc(
+        #{($btn-font-size-lg * $btn-line-height-lg + $btn-padding-y-lg * 2)} + #{(
+                $btn-border-width * 2
+            )}
+    );
 }
