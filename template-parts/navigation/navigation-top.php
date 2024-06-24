@@ -51,6 +51,8 @@ global $user_id, $registration_url, $login_url;
                             <img src="<?php echo get_avatar_url($user_id, array('size' => 36)); ?>" class="user-avatar rounded-circle border border-dark ml-1" alt="">
                         </a>
                         <div class="dropdown-menu dropdown-dark dropdown-menu-right rounded-0 mb-3">
+                            <a class="dropdown-item" href="/courses/curs-online-academic-de-desen/"><?php _e('Învață', 'goicc'); ?></a>
+                            <div class="dropdown-divider"></div>
                             <?php $user_account_tabs = goicc_get_user_account_tabs();
                             if ($user_account_tabs && is_array($user_account_tabs)) {
                                 $account_page = accout_page_url();

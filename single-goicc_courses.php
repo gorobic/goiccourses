@@ -1,4 +1,13 @@
-<?php get_header(); ?>
+<?php
+global $user_id;
+
+$active_subscription = check_active_subscription_to_course($user_id, get_the_ID());
+if (!$active_subscription) {
+    header('Location: ' . home_url());
+    die();
+}
+
+get_header(); ?>
 
 <?php if (have_posts()) {
     while (have_posts()) {
