@@ -12,7 +12,21 @@ global $user_id, $registration_url, $login_url;
                 <?php echo esc_attr(get_bloginfo('name')); ?>
             <?php } ?>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <?php if (has_nav_menu('primary-end')) {
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'primary-end',
+                    'menu_id'        => 'primary-end-menu',
+                    'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                    'container'       => 'ul',
+                    //'container_class' => 'collapse navbar-collapse',
+                    'menu_class'      => 'navbar-nav order-lg-last ml-auto mr-3 mr-lg-0',
+                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'          => new WP_Bootstrap_Navwalker(),
+                )
+            );
+        } ?>
+        <button class="navbar-toggler py-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -80,21 +94,6 @@ global $user_id, $registration_url, $login_url;
                     </li>
                 <?php } ?>
             </ul>
-
-            <?php if (has_nav_menu('primary-end')) {
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'primary-end',
-                        'menu_id'        => 'primary-end-menu',
-                        'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
-                        'container'       => 'ul',
-                        //'container_class' => 'collapse navbar-collapse',
-                        'menu_class'      => 'navbar-nav',
-                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                        'walker'          => new WP_Bootstrap_Navwalker(),
-                    )
-                );
-            } ?>
         </div>
 
 
